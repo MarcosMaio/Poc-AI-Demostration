@@ -1,0 +1,35 @@
+{
+    "Partes": {
+        "Emissor": "PRODUTORES ENERGÉTICOS DE MANSO S.A. - PROMAN",
+        "CoordenadorLider": "N/A",
+        "AgenteFiduciario": "OLIVEIRA TRUST DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS S.A.",
+        "Intervenientes": "N/A",
+        "Escriturador": "N/A"
+    },
+    "Caracteristicas": {
+        "NumeroEmissao": "1ª emissão",
+        "Series": "Série Única",
+        "Forma": "Escritural",
+        "Tipo": "Simples, não conversível",
+        "Especie": "Subordinada",
+        "DataEmissao": "19 de outubro de 2001",
+        "DataRentabilidade": "janeiro de 2002",
+        "DataVencimento": "Na dissolução ou liquidação da Emissora",
+        "Prazo": "Indeterminado",
+        "ValorDaEmissao": "R$ 37.000.000,00",
+        "ValorUnitario": "R$ 1.960,00",
+        "QuantidadeDaEmissao": "10.000",
+        "DestinacaoDosRecursos": "Os recursos captados serão destinados para liquidação de obrigações contratuais da Emissora até R$ 19.600.000,00 e o saldo remanescente para o resgate de 1.000.000 de ações ordinárias ao preço de aproximadamente R$ 17,40 por ação.",
+        "AtualizacaoValorEmissao": "O valor de emissão das Debêntures será atualizado pela variação acumulada do IGP-M, calculada de forma pro rata temporis por dias corridos.",
+        "DadosRentabilidadeRemuneracao": "As Debêntures receberão remuneração mensal variável equivalente a uma participação no Resultado Operacional Disponível (RODI) auferido pela Emissora.",
+        "PagamentoRemuneracao": "A remuneração será apurada no mês subsequente ao vencido e paga no dia 25 do mês subsequente ou no primeiro dia útil posterior.",
+        "PagamentoAmortizacao": "A Emissora deverá promover amortizações extraordinárias do valor nominal atualizado das Debêntures, sempre que possível mensalmente, após o pagamento da remuneração devida aos debenturistas.",
+        "AmortizacaoExtraordinaria": "Conforme descrito no pagamento de amortização.",
+        "AquisicaoFacultativa": "A Emissora poderá, a qualquer tempo, adquirir no mercado as Debêntures em circulação por preço não superior ao seu valor nominal.",
+        "ResgateAntecipado": "É proibido o resgate antecipado das Debêntures."
+    },
+    "GarantiasEVencimentosAntecipados": {
+        "ObrigaçõesDoEmissor": "A Emissora tem obrigações adicionais incluindo fornecer informações ao Agente Fiduciário, manter contabilidade atualizada e não realizar operações fora de seu objeto social.",
+        "VencimentosAntecipados": "O Agente Fiduciário deverá declarar antecipadamente vencidas todas as obrigações em casos como venda total dos ativos, falência ou liquidação da Emissora, entre outros conforme cláusula V."
+    }
+}
