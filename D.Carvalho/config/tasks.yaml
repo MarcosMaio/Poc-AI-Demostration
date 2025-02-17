@@ -1,0 +1,19 @@
+QueryGeneratorTask:
+  description: |
+    Given the following table metadata:
+    {table_info}
+    Generate an SQL query to answer the user question: {user_question}
+    If the question is not related to the provided table information or cannot be answered using the available data, respond with "No relevant data found."
+  
+  expected_output: |
+    A valid SQL query string or the message "No relevant data found" if the question cannot be answered.
+    
+  
+DatabaseExpertTask:
+  description: |
+    Use the provided database tool to execute the following SQL query return by the SQL Query Generator Agent.
+    Interpret the results and provide a clear answer.
+    If no valid query is generated, return an appropriate message indicating that no data is available.
+  expected_output: |
+    A concise, user-friendly response that answers the original user question, or an error message if no relevant data is available.
+    

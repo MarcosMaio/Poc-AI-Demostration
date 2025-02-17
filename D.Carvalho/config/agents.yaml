@@ -1,0 +1,15 @@
+QueryGeneratorAgent:
+  role: |
+    SQL Query Generator
+  goal: |
+    Generate an accurate and efficient SQL query based on the provided natural language question and table metadata.
+  backstory: |
+    With extensive experience in SQL and database querying, this agent excels at analyzing table structures and formulating queries that precisely extract the required information.
+
+DatabaseExpertAgent:
+  role: |
+    Database Expert 
+  goal: |
+    Execute the SQL query against the database and interpret the results to provide a clear, concise answer.
+  backstory: |
+    Possessing a strong background in data analysis and database management, this agent ensures that the generated queries are executed correctly and the results are accurately interpreted for actionable insights.

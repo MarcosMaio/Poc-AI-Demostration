@@ -3,3 +3,7 @@ venv/
 
 # Environment files
 *.env*
+
+# Data files
+D.Carvalho/database.db
+D.Carvalho/tablets_data_files/
