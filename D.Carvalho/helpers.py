@@ -45,11 +45,12 @@ def create_table_from_excel(db_path, excel_file):
         return
     
     try:
-        df = pd.read_excel(excel_file)
+        # Limita a leitura para as primeiras 150 linhas
+        df = pd.read_excel(excel_file, nrows=150)
         conn = sqlite3.connect(db_path)
         df.to_sql(table_name, conn, if_exists="replace", index=False)
         conn.close()
-        print(f"Tabela '{table_name}' criada no banco de dados '{db_path}'.")
+        print(f"Tabela '{table_name}' criada no banco de dados '{db_path}' com até 150 linhas.")
     except Exception as e:
         print(f"Erro ao criar a tabela: {e}")
         return
