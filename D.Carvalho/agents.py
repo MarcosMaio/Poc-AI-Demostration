@@ -69,14 +69,6 @@ class Agents:
         with open(filepath, "r") as f:
             return yaml.safe_load(f)
 
-    # files = glob.glob("knowledge/data/files/*.xlsx")
-    # files = [file.replace("knowledge/", "", 1) for file in files]
-    # print(f"Found ({files}) files.")
-    
-    # excel_source = ExcelKnowledgeSource(
-    #     file_paths=files
-    # )
-
     @agent
     def get_query_generator_agent(self) -> Agent:
         return Agent(
@@ -84,17 +76,28 @@ class Agents:
             llm=self.llm,
             verbose=True,
             cache=False,
-            context=[f"Database Schema:\n{self.table_info}"]
+            max_iter=2,
         )
 
     @agent
-    def get_database_interaction_agent(self) -> Agent:
+    def get_database_executor_agent(self) -> Agent:
         return Agent(
-            config=self.agents_config["DatabaseExpertAgent"],
+            config=self.agents_config["DatabaseExecutorAgent"],
             llm=self.llm,
             verbose=True,
             cache=False,
             tools=[self.sqlite_tool],
+            max_iter=2,
+        )
+    
+    @agent
+    def get_result_formatter_agent(self) -> Agent:
+        return Agent(
+            config=self.agents_config["ResultFormatterAgent"],
+            llm=self.llm,
+            verbose=True,
+            cache=False,
+            max_iter=2,
         )
 
     @task
@@ -107,11 +110,23 @@ class Agents:
         
     @task
     def get_execute_query_task(self) -> Task:
-        return Task(
-            config=self.tasks_config["DatabaseExpertTask"],
-            agent=self.get_database_interaction_agent(),
+        self.execute_query_task = Task(
+            config=self.tasks_config["DatabaseExecutorTask"],
+            agent=self.get_database_executor_agent(),
             context=[
                 self.query_generator_task
+            ],
+        )
+        return self.execute_query_task
+        
+    @task
+    def get_result_formatter_task(self) -> Task:
+        return Task(
+            config=self.tasks_config["ResultFormatterTask"],
+            agent=self.get_database_executor_agent(),
+            context=[
+                self.query_generator_task,
+                self.execute_query_task
             ],
         )
 
@@ -119,14 +134,17 @@ class Agents:
         return Crew(
             agents=[
                 self.get_query_generator_agent(),
-                self.get_database_interaction_agent()
+                self.get_database_executor_agent(),
+                self.get_result_formatter_agent()
             ],
             tasks=[
                 self.get_generate_query_task(),
-                self.get_execute_query_task()
+                self.get_execute_query_task(),
+                self.get_result_formatter_task()
             ],
             verbose=True,
             memory=False,
+            context=[f"Database Schema:\n{self.table_info}"]
         )
 
     def extract_answer(self, user_question: str):

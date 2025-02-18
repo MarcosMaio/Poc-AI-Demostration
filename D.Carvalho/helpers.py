@@ -1,18 +1,13 @@
 import os
 import sqlite3
-import pandas as pd
 import json
 import re
-from crewai.knowledge.source.base_knowledge_source import BaseKnowledgeSource
-import sqlalchemy
-from typing import Any
+from pathlib import Path
+import pandas as pd
 
-def create_database(db_path):
+def create_database(db_path: str) -> None:
     """
-    Cria o banco de dados SQLite se ele ainda não existir.
-    
-    Parâmetros:
-      db_path (str): Caminho/nome do arquivo do banco de dados.
+    Cria um banco de dados SQLite no caminho especificado, caso não exista.
     """
     if not os.path.exists(db_path):
         try:
@@ -21,22 +16,13 @@ def create_database(db_path):
             print(f"Banco de dados '{db_path}' criado.")
         except Exception as e:
             print(f"Erro ao criar o banco de dados: {e}")
-            return
+    else:
+        print(f"Banco de dados '{db_path}' já existe.")
 
-def create_table_from_excel(db_path, excel_file):
+def create_table_from_excel(db_path: str, excel_file: str) -> None:
     """
-    Lê o arquivo Excel e cria uma tabela no banco de dados SQLite.
-    O nome da tabela é derivado do nome do arquivo Excel: 
-    convertido para minúsculas e com espaços substituídos por "_".
-    
-    Apenas as primeiras 150 linhas do arquivo serão lidas.
-    
-    Parâmetros:
-      db_path (str): Caminho/nome do arquivo do banco de dados.
-      excel_file (str): Caminho/nome do arquivo Excel a ser importado.
+    Lê um arquivo Excel e cria/atualiza uma tabela no banco de dados SQLite.
     """
-    import os, sqlite3, pandas as pd
-
     if not os.path.exists(db_path):
         print(f"O banco de dados '{db_path}' não existe.")
         return
@@ -47,19 +33,19 @@ def create_table_from_excel(db_path, excel_file):
     except Exception as e:
         print(f"Erro ao criar o nome da tabela: {e}")
         return
-    
+
     try:
-        df = pd.read_excel(excel_file, nrows=150)
+        df = pd.read_excel(excel_file)
         df.columns = df.columns.str.replace(r"[+/\s]+", "_", regex=True)
         df.columns = df.columns.str.lower()
-        
+
         for col in df.columns:
             if col.startswith("data"):
                 try:
                     df[col] = pd.to_datetime(df[col], dayfirst=True, errors='coerce')
                 except Exception as e:
                     print(f"Não foi possível converter a coluna {col} para datetime: {e}")
-        
+
         dtype_mapping = {}
         for col in df.columns:
             if pd.api.types.is_datetime64_any_dtype(df[col]):
@@ -70,17 +56,26 @@ def create_table_from_excel(db_path, excel_file):
                 dtype_mapping[col] = "REAL"
             else:
                 dtype_mapping[col] = "TEXT"
-        
+
         conn = sqlite3.connect(db_path)
         df.to_sql(table_name, conn, if_exists="replace", index=False, dtype=dtype_mapping)
         conn.close()
-        print(f"Tabela '{table_name}' criada no banco de dados '{db_path}' com até 150 linhas.")
+        print(f"Tabela '{table_name}' criada no banco de dados '{db_path}'.")
     except Exception as e:
         print(f"Erro ao criar a tabela: {e}")
-        return
 
+def process_excel_tables(db_path: str, tables_dir: Path) -> None:
+    """
+    Encontra todos os arquivos .xlsx em tables_dir e cria/atualiza as tabelas
+    no banco de dados apontado por db_path.
+    """
+    for excel_file in tables_dir.glob("*.xlsx"):
+        create_table_from_excel(db_path, str(excel_file))
     
 def clean_agent_output(value):
+    """
+    Limpa a saída do agente, que pode conter trechos de código JSON.
+    """
     pattern = r'```json\s*([\s\S]+?)```'
     match = re.search(pattern, value)
     
