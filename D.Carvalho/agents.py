@@ -14,22 +14,41 @@ logger = logging.getLogger("poc_presentations")
 
 class SQLiteQueryInput(BaseModel):
     query: str = Field(..., description="SQL query to execute")
-    db_path: str = Field("database.db", description="Path to the SQLite database")
-
+        
 class SQLiteQueryTool(BaseTool):
     name: str = "SQLite Query Tool"
-    description: str = "Executes SQL queries on a SQLite database"
+    description: str = "Executes SQL queries on a SQLite database and retrieves table information"
     args_schema: type[BaseModel] = SQLiteQueryInput
 
-    def _run(self, query: str, db_path: str) -> str:
+    def _run(self, query: str) -> str:
+        db_path = "database.db"
         try:
-            with sqlite3.connect("database.db") as conn:
+            with sqlite3.connect(db_path) as conn:
                 cursor = conn.cursor()
                 cursor.execute(query)
                 results = cursor.fetchall()
                 return str(results)
         except Exception as e:
             return f"Error executing query: {str(e)}"
+
+    def get_table_info(self, db_path: str) -> str:
+        try:
+            with sqlite3.connect(db_path) as conn:
+                cursor = conn.cursor()
+                cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+                tables = cursor.fetchall()
+                
+                table_info = []
+                for table in tables:
+                    table_name = table[0]
+                    cursor.execute(f"PRAGMA table_info({table_name});")
+                    columns = cursor.fetchall()
+                    column_info = [f"- {col[1]}: {col[2]}" for col in columns]
+                    table_info.append(f"Table Name: {table_name}\nColumns:\n" + "\n".join(column_info))
+                
+                return "\n\n".join(table_info)
+        except Exception as e:
+            return f"Error retrieving table information: {str(e)}"
 
 class Agents:
     def __init__(self, model: str, api_key: str, temperature: float, top_p: float):
@@ -43,37 +62,8 @@ class Agents:
         self.agents_config = self.load_yaml("config/agents.yaml")
         self.tasks_config = self.load_yaml("config/tasks.yaml")
         
-        
         self.sqlite_tool = SQLiteQueryTool()
-        
-        self.table_info = (
-            "Table Name: produtos\n"
-            "Description: Tabela contendo informações sobre os produtos disponíveis, incluindo estoque, preços, últimas compras e vendas.\n"
-            "Columns:\n"
-            "- FILIAL: TEXT\n"
-            "- CodigoProduto: TEXT\n"
-            "- DescricaoProduto: TEXT\n"
-            "- Modelo: TEXT\n"
-            "- ModeloDescricao: TEXT\n"
-            "- Grupo_John_Deere: TEXT\n"
-            "- UnidadeMedida: TEXT\n"
-            "- Marca: TEXT\n"
-            "- EstoqueDisponivel: REAL\n"
-            "- EstoqueReservaBalcao: REAL\n"
-            "- EstoqueReservaOficina: REAL\n"
-            "- PrecoVenda: REAL\n"
-            "- CustoMedioUnitario: REAL\n"
-            "- ValorUltimaCompraFilial: REAL\n"
-            "- Locacao: TEXT\n"
-            "- UltimaCompraFilial: TEXT\n"
-            "- UltimaCompra: TEXT\n"
-            "- UltimaVendaFilial: TEXT\n"
-            "- UltimaVenda: TEXT\n"
-            "- DataInclusao: TEXT\n"
-            "- UsuarioInclusao: TEXT\n"
-            "- DataAlteracao: TEXT\n"
-            "- UsuarioAlteracao: TEXT\n"
-        )
+        self.table_info = self.sqlite_tool.get_table_info("database.db")
 
     def load_yaml(self, filepath):
         with open(filepath, "r") as f:
@@ -94,6 +84,7 @@ class Agents:
             llm=self.llm,
             verbose=True,
             cache=False,
+            context=[f"Database Schema:\n{self.table_info}"]
         )
 
     @agent

@@ -29,10 +29,14 @@ def create_table_from_excel(db_path, excel_file):
     O nome da tabela é derivado do nome do arquivo Excel: 
     convertido para minúsculas e com espaços substituídos por "_".
     
+    Apenas as primeiras 150 linhas do arquivo serão lidas.
+    
     Parâmetros:
       db_path (str): Caminho/nome do arquivo do banco de dados.
       excel_file (str): Caminho/nome do arquivo Excel a ser importado.
     """
+    import os, sqlite3, pandas as pd
+
     if not os.path.exists(db_path):
         print(f"O banco de dados '{db_path}' não existe.")
         return
@@ -45,15 +49,36 @@ def create_table_from_excel(db_path, excel_file):
         return
     
     try:
-        # Limita a leitura para as primeiras 150 linhas
         df = pd.read_excel(excel_file, nrows=150)
+        df.columns = df.columns.str.replace(r"[+/\s]+", "_", regex=True)
+        df.columns = df.columns.str.lower()
+        
+        for col in df.columns:
+            if col.startswith("data"):
+                try:
+                    df[col] = pd.to_datetime(df[col], dayfirst=True, errors='coerce')
+                except Exception as e:
+                    print(f"Não foi possível converter a coluna {col} para datetime: {e}")
+        
+        dtype_mapping = {}
+        for col in df.columns:
+            if pd.api.types.is_datetime64_any_dtype(df[col]):
+                dtype_mapping[col] = "DATETIME"
+            elif pd.api.types.is_integer_dtype(df[col]):
+                dtype_mapping[col] = "INTEGER"
+            elif pd.api.types.is_float_dtype(df[col]):
+                dtype_mapping[col] = "REAL"
+            else:
+                dtype_mapping[col] = "TEXT"
+        
         conn = sqlite3.connect(db_path)
-        df.to_sql(table_name, conn, if_exists="replace", index=False)
+        df.to_sql(table_name, conn, if_exists="replace", index=False, dtype=dtype_mapping)
         conn.close()
         print(f"Tabela '{table_name}' criada no banco de dados '{db_path}' com até 150 linhas.")
     except Exception as e:
         print(f"Erro ao criar a tabela: {e}")
         return
+
     
 def clean_agent_output(value):
     pattern = r'```json\s*([\s\S]+?)```'
