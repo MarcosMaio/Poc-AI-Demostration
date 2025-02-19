@@ -1,13 +1,12 @@
 import logging
 from crewai import Agent, Task, Crew, LLM
 from crewai.project import agent, task
-import os
 import yaml
-import glob
 from crewai.knowledge.source.excel_knowledge_source import ExcelKnowledgeSource
 from crewai.tools import BaseTool
 from pydantic import BaseModel, Field
 import sqlite3
+import json
 
 
 logger = logging.getLogger("poc_presentations")
@@ -49,7 +48,6 @@ class SQLiteQueryTool(BaseTool):
                 return "\n\n".join(table_info)
         except Exception as e:
             return f"Error retrieving table information: {str(e)}"
-
 class Agents:
     def __init__(self, model: str, api_key: str, temperature: float, top_p: float):
         self.llm = LLM(
@@ -61,13 +59,21 @@ class Agents:
 
         self.agents_config = self.load_yaml("config/agents.yaml")
         self.tasks_config = self.load_yaml("config/tasks.yaml")
-        
+        self.table_info = self.load_json("prompt/tables_data_info.json")
+        self.db_overview = self.load_markdown("prompt/db_overview.md")
         self.sqlite_tool = SQLiteQueryTool()
-        self.table_info = self.sqlite_tool.get_table_info("database.db")
 
     def load_yaml(self, filepath):
         with open(filepath, "r") as f:
             return yaml.safe_load(f)
+        
+    def load_json(self, filepath):
+        with open(filepath, "r") as f:
+            return json.load(f)
+    
+    def load_markdown(self, filepath):
+        with open(filepath, "r") as f:
+            return f.read()
 
     @agent
     def get_query_generator_agent(self) -> Agent:
@@ -144,7 +150,10 @@ class Agents:
             ],
             verbose=True,
             memory=False,
-            context=[f"Database Schema:\n{self.table_info}"]
+            context=[
+                f"Database Schema:\n{self.table_info}",
+                f"Database Overview:\n{self.db_overview}"
+            ]
         )
 
     def extract_answer(self, user_question: str):
@@ -152,7 +161,8 @@ class Agents:
         result = crew_instance.kickoff(
             inputs={
                 "user_question": user_question,
-                "table_info": self.table_info
+                "table_info": self.table_info,
+                "db_overview": self.db_overview
             }
         )
         

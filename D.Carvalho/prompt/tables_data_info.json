@@ -1,0 +1,168 @@
+[
+  {
+    "table_name": "clientes",
+    "description": "Tabela contendo dados cadastrais de clientes, suas características e informações financeiras básicas.",
+    "primary_key": "codigo_loja",
+    "foreign_keys": [],
+    "columns": {
+      "codigo_loja": {
+        "description": "Identificador único do cliente.",
+        "dtype": "string",
+        "business_meaning": "Permite correlacionar cada cliente às transações de faturamento.",
+        "example_values": ["CLI0001", "LOJA1234"]
+      },
+      "nome": {
+        "description": "Nome completo ou razão social do cliente.",
+        "dtype": "string",
+        "business_meaning": "Identificação textual do cliente em relatórios e documentos.",
+        "example_values": ["João da Silva", "MÁQUINAS AGRÍCOLAS LTDA."]
+      },
+      "tipo_pessoa": {
+        "description": "Classificação do cliente: Pessoa Física (PF) ou Pessoa Jurídica (PJ).",
+        "dtype": "string",
+        "business_meaning": "Diferencia tratamento fiscal e tributário.",
+        "example_values": ["PF", "PJ"]
+      },
+      "tipo_cliente": {
+        "description": "Categoria comercial do cliente (ex: varejo, atacado, etc.).",
+        "dtype": "string",
+        "business_meaning": "Segmentação para políticas comerciais e estratégias de marketing.",
+        "example_values": ["Atacadista", "Consumidor Final"]
+      },
+      "limite_credito": {
+        "description": "Valor máximo de crédito concedido ao cliente.",
+        "dtype": "float64",
+        "business_meaning": "Auxilia no controle de risco e concessão de compras a prazo.",
+        "example_values": [50000.0, 100000.0],
+        "statistical_insights": {
+          "min_value": 0,
+          "max_value": 1000000,
+          "average_value": 200000
+        }
+      },
+      "data_primeira_compra": {
+        "description": "Data da primeira compra registrada para o cliente.",
+        "dtype": "datetime",
+        "business_meaning": "Identifica o momento em que o cliente se tornou ativo.",
+        "example_values": ["2023-05-10", "2024-01-07"]
+      },
+      "data_ultima_compra": {
+        "description": "Data da compra mais recente do cliente.",
+        "dtype": "datetime",
+        "business_meaning": "Monitora a recorrência de compras e atividade do cliente.",
+        "example_values": ["2025-02-05", "2025-02-14"]
+      }
+    },
+    "relationships": {
+      "faturamento": {
+        "local_column": "codigo_loja",
+        "foreign_table": "faturamento",
+        "foreign_column": "cliente_loja",
+        "description": "Relaciona clientes às suas notas fiscais emitidas."
+      }
+    },
+    "usage_examples": [
+      "Identificar novos clientes (data_primeira_compra dentro de um período).",
+      "Analisar clientes inativos (sem data_ultima_compra recente)."
+    ],
+    "business_rules": [
+      "Quando 'tipo_pessoa' é PF, o sistema exige CPF válido; se PJ, exige CNPJ válido (validação externa).",
+      "O 'limite_credito' pode ser revisado periodicamente com base em histórico de pagamentos."
+    ]
+  },
+  {
+    "table_name": "faturamento",
+    "description": "Tabela que registra notas fiscais emitidas, representando as vendas (faturamento) da empresa.",
+    "primary_key": "numero_nf",
+    "foreign_keys": [
+      {
+        "column_name": "cliente_loja",
+        "references_table": "clientes",
+        "references_column": "codigo_loja"
+      }
+    ],
+    "columns": {
+      "numero_nf": {
+        "description": "Número único da nota fiscal.",
+        "dtype": "string",
+        "business_meaning": "Identificação principal da transação de venda/faturamento.",
+        "example_values": ["NF12345", "NF98765"]
+      },
+      "serie": {
+        "description": "Série da nota fiscal para controle interno.",
+        "dtype": "string",
+        "business_meaning": "Divide a numeração de notas por série, útil em ambientes com mais de uma filial ou fluxo de emissão.",
+        "example_values": ["001", "002"]
+      },
+      "data_emissao": {
+        "description": "Data em que a nota foi emitida.",
+        "dtype": "datetime",
+        "business_meaning": "Fundamental para relatórios de vendas por período e cálculo de impostos.",
+        "example_values": ["2025-02-01", "2025-02-14"]
+      },
+      "cliente_loja": {
+        "description": "Identificador do cliente relacionado à nota fiscal.",
+        "dtype": "string",
+        "business_meaning": "Chave estrangeira que vincula o faturamento ao respectivo cliente.",
+        "example_values": ["CLI0001", "LOJA1234"]
+      },
+      "cliente": {
+        "description": "Nome ou razão social do cliente no momento da emissão.",
+        "dtype": "string",
+        "business_meaning": "Registro textual do cliente conforme constou na NF.",
+        "example_values": ["MÁQUINAS AGRÍCOLAS LTDA.", "João da Silva"]
+      },
+      "valor_total_produtos": {
+        "description": "Soma dos valores dos itens de produtos na nota.",
+        "dtype": "float64",
+        "business_meaning": "Identifica o valor base das vendas antes de impostos.",
+        "example_values": [1500.0, 45000.0]
+      },
+      "valor_total_impostos": {
+        "description": "Valor total dos impostos incidentes na nota.",
+        "dtype": "float64",
+        "business_meaning": "Apoia o cálculo de tributos e relatórios de recolhimento.",
+        "example_values": [225.0, 6750.0]
+      },
+      "valor_frete": {
+        "description": "Custo de frete indicado na nota fiscal, se aplicável.",
+        "dtype": "float64",
+        "business_meaning": "Permite apurar o custo de envio e repasse ao cliente.",
+        "example_values": [50.0, 200.0]
+      },
+      "valor_desconto": {
+        "description": "Valor total de descontos concedidos na nota fiscal.",
+        "dtype": "float64",
+        "business_meaning": "Registro de abatimentos, promoções ou negociações específicas.",
+        "example_values": [0.0, 300.0]
+      },
+      "valor_total_nota": {
+        "description": "Valor final da nota fiscal (produtos + impostos + frete - descontos).",
+        "dtype": "float64",
+        "business_meaning": "Representa o total a ser pago pelo cliente; essencial para relatórios financeiros.",
+        "example_values": [1725.0, 48200.0],
+        "statistical_insights": {
+          "min_value": 100,
+          "max_value": 100000,
+          "average_value": 4500
+        }
+      }
+    },
+    "relationships": {
+      "clientes": {
+        "local_column": "cliente_loja",
+        "foreign_table": "clientes",
+        "foreign_column": "codigo_loja",
+        "description": "Permite identificar o cliente responsável pela compra, facilitando a análise de vendas por cliente."
+      }
+    },
+    "usage_examples": [
+      "Calcular o faturamento total de um período específico, agrupando por data_emissao.",
+      "Listar todas as NFs de um determinado cliente (cliente_loja)."
+    ],
+    "business_rules": [
+      "A soma dos itens (valor_total_produtos) deve refletir a composição dos produtos vendidos.",
+      "Impostos e frete podem ser opcionais, dependendo do tipo de venda ou localidade."
+    ]
+  }
+]

@@ -1,10 +1,14 @@
 QueryGeneratorTask:
   description: |
-    Given the following database schema:
-    {table_info}
-    and using a Chain-of-Thought approach, generate an SQL query to answer the user question: {user_question}.
-    - For questions involving time-based comparisons or trend analyses, include appropriate time filters, subqueries, or calculations.
-    - If the question is not related to the schema or cannot be answered with the available data, respond with "No relevant data found."
+    Instructions:
+    {db_overview}
+
+    Input Data for reference:
+    
+      Database Schema: {table_info}
+
+      User Question: {user_question}
+
   expected_output: |
     A string containing a valid SQL query or the message "No relevant data found."
 
