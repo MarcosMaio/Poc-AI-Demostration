@@ -58,6 +58,7 @@ The agent should use this information to ensure the **SQL query is valid and coh
 ## Example Use Cases & Query Construction
 
 Below are **examples** demonstrating the reasoning process to construct **SQL queries**, considering **only** the `clientes` and `faturamento` tables.
+Keep in mind - the SQLite database doesn't have YEAR/MONTH or DAY function. You need to adapt the query to use the `STRFTIME('%Y', data_emissao)` function appropriately instead.
 
 ---
 

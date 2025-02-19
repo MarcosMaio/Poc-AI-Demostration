@@ -47,6 +47,6 @@ if st.button("Executar Consulta") and user_question and len(user_question.strip(
         st.code(result["sql_result"], language="sql")
         
         st.markdown("### Resposta Final")
-        st.text_area("Resposta", value=str(result["full_result"]), height=400)
+        st.markdown(result["full_result"])
     except Exception as e:
         st.error(f"Ocorreu um erro ao processar a consulta: {e}")

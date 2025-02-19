@@ -6,6 +6,7 @@ QueryGeneratorTask:
     Input Data for reference:
     
       Database Schema: {table_info}
+      Keep in mind that for table 'faturamento', the column identifying the client code is actually called "cliente_loja" - as opposed to the name "codigo_loja" being used in the 'clientes' table for merging the two tables.
 
       User Question: {user_question}
 
