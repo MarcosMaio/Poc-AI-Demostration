@@ -2,7 +2,8 @@ import streamlit as st
 import os
 import logging
 
-from agents import Agents 
+from agents import Agents  
+
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("poc_presentations")
@@ -42,7 +43,10 @@ if st.button("Executar Consulta") and user_question and len(user_question.strip(
         agent_instance = Agents(model, api_key, temperature, top_p)
         result = agent_instance.extract_answer(user_question)
         
-        st.markdown("### Resposta da Consulta")
-        st.text_area("Resposta", value=str(result), height=400)
+        st.markdown("### Query SQL Gerada")
+        st.code(result["sql_result"], language="sql")
+        
+        st.markdown("### Resposta Final")
+        st.text_area("Resposta", value=str(result["full_result"]), height=400)
     except Exception as e:
         st.error(f"Ocorreu um erro ao processar a consulta: {e}")

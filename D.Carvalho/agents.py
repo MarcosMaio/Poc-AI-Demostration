@@ -155,4 +155,11 @@ class Agents:
                 "table_info": self.table_info
             }
         )
-        return result.raw if result.raw else result.json_dict()
+        
+        sql_result = self.query_generator_task.output.raw
+        
+        return {
+            "sql_result": sql_result,
+            "full_result": result.raw if result.raw else result.json_dict()
+        }
+    
