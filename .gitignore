@@ -7,3 +7,4 @@ venv/
 # Data files
 D.Carvalho/database.db
 D.Carvalho/tables_data_files/
+.qodo
