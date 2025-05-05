@@ -3043,7 +3043,7 @@ Escritura de Emissão, sendo certo que tal decisão terá caráter irrevogável 
 
 6.2.8. Adicionalmente ao disposto na Cláusula 6.2.7 acima, na hipótese de não
 instalação da Assembleia Geral de Debenturistas, por falta de quórum em primeira e segunda
-convocações, ou ausência de quórum de deliberação, o Agente Fiduciário **não** deverá
+convocações, ou ausência de quórum de deliberação, o Agente Fiduciário **não deverá**
 declarar o vencimento antecipado das Debêntures.
 
 6.3. Cumpridas as disposições das Cláusulas 6.1 ou 6.2 acima, caso venha a ocorrer um

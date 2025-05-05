@@ -1,0 +1,34 @@
+AgentTask:
+  description: |
+    You are responsible for analyzing the performance data of our information extraction system, based on usage activity tracked within the platform.
+    The input data includes approval and correction rates, overall accuracy, and field-level error statistics.
+
+    Your goal is to generate a professional and formal summary **in Brazilian Portuguese (pt-BR)** that clearly describes the system's performance,
+    without referencing internal teams or clients.
+
+    This report will be shown to end-users via a download/view button in the interface, and it must reflect how well the system is functioning —
+    especially in terms of accuracy, correction needs, and field-level behavior.
+
+    Please use translated field display names as they appear on the front-end (in Portuguese), and **avoid using camelCase keys or technical terms** 
+    like "AI", "machine learning", or "model". This is a performance summary, not a technical document.
+
+    Your report must include the following structure, using plain text (no markdown headers or formatting like ### or *). Titles should be capitalized and separated clearly with line breaks:
+    - General Overview
+    - Accuracy Summary
+    - Fields with the Highest Correction Rate
+    - Final Considerations
+
+    ⚠️ Once your report is written, you MUST call the tool `generate_analysis_graphics_tool` and pass the following parameters:
+    - `data_to_analyze`: the dictionary provided as task input
+    - `report_text`: the full body of the report you just wrote (as a plain string)
+
+    This tool will return the path to a single PDF file that includes your report and the performance charts.
+    Return this path alongside your final answer.
+
+    All content must be in **Brazilian Portuguese (pt-BR)**.
+
+    data to analyze: {data_to_analyze}
+  expected_output: |
+    A complete performance report in Brazilian Portuguese, including:
+    - A formal written summary of the system's performance
+    - A valid path to the generated PDF containing both the text and performance charts

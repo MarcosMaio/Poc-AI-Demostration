@@ -3,6 +3,7 @@ import os
 import json
 import shutil
 import logging
+from dotenv import load_dotenv
 
 from agents import Agents
 from helpers import (
@@ -11,6 +12,8 @@ from helpers import (
     get_detailed_instructions_from_file,
     get_doc_content_from_file
 )
+
+load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("poc_presentations")
@@ -72,8 +75,11 @@ if uploaded_file:
 
                 if model.startswith("gemini"):
                     api_key = os.getenv("GEMINI_API_KEY")
-                if model.startswith("gpt") or model == "o1-preview":
+                elif model.startswith("gpt") or model == "o1-preview":
                     api_key = os.getenv("OPENAI_API_KEY")
+                else:
+                    api_key = None
+
                 if not api_key:
                     st.error("API Key não encontrada. Verifique a variável de ambiente.")
                 else:
