@@ -1,0 +1,15 @@
+@startuml
+title Sequence – Single Post Creation
+
+participant "PostContentCreator" as PCC
+participant "search_web" as SW
+participant "PostContentCompliance" as PCOMP
+database "ChromaDB" as DB
+
+PCC -> SW : query best-practices
+SW --> PCC : guidelines
+PCC -> DB : embed + store post
+PCC --> PCOMP : raw_post_text
+PCOMP -> PCOMP : audit & fix
+PCOMP --> PCC : compliant_post
+@enduml

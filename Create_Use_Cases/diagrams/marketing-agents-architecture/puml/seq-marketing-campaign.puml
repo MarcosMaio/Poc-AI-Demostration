@@ -1,0 +1,18 @@
+@startuml
+title Sequence – 30-day Campaign Workflow
+
+actor "User / API" as U
+participant "ContentStrategistAgent" as CSA
+participant "PostPlannerAgent" as PPA
+participant "ComplianceReviewerAgent" as CRA
+
+U -> CSA : subject, objective, ...\n(GenerateCampaignInputs)
+CSA -> CSA : brainstorm strategy
+CSA --> U : strategy brief
+U -> PPA : strategy brief
+PPA -> PPA : create 30-day JSON\n(schedule)
+PPA --> U : planned_posts
+U -> CRA : planned_posts
+CRA -> CRA : validate & patch
+CRA --> U : compliant_posts
+@enduml

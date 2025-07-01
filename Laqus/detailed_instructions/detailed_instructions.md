@@ -1,119 +1,435 @@
-## Instructions for Information Extraction (Detailed Instructions)
+## Instructions for Information Extraction
 
-## 1. Extraction Fields
+Instructions for Information Extraction
 
-### A. Parties (Partes)
-Extract the following details:
+Use the guidelines below to extract and structure every field from the document into a single JSON object that exactly matches the schema. Do not include any extra text—only return the JSON.
 
-- **Issuer (Emissor)**
-- **Lead Coordinator (Coordenador Líder)**
-- **Trustee Agent (Agente Fiduciário)**
-- **Intervening Parties (Intervenientes)**
-- **Registrar (Escriturador)**
+### Fields and Descriptions:
 
-### B. Characteristics (Características)
-Extract the following details:
+1. **emissorId**:
 
-- **Emission Number (Número Emissão)**
-- **Series (Série(s))**
-- **Form (Forma)**
-- **Type (Tipo)**
-- **Species (Espécie)**
-- **Emission Date (Data Emissão)**
-- **Profitability Date (Data Rentabilidade)**
-- **Maturity Date (Data Vencimento)**
-- **Term (Prazo)**
-- **Issuance Value (Valor da Emissão)**
-- **Unit Value (Valor unitário)**
-- **Issuance Quantity (Quantidade da Emissão)**
-- **Use of Funds (Destinação dos Recursos)**
-- **Emission Value Update (Atualização do valor da emissão)**
-- **Profitability and Remuneration Data (Dados de Rentabilidade e Remuneração)**
-- **Remuneration Payment (Pagamento da Remuneração)**
-- **Amortization Payment (Pagamento da amortização)**
-- **Extraordinary Amortization (Amortização Extraordinária)**
-- **Optional Acquisition (Aquisição Facultativa)**
-- **Early Redemption (Resgate Antecipado)**
+   * UUID of the issuer.
+   * Type: `string`
 
-### C. Guarantee and Early Maturity Data (Dados de Garantias e Vencimento Antecipado)
-Extract the following details:
+2. **codigoExterno**:
 
-- **Issuer Obligations (Obrigações do Emissor)**
-- **Early Maturities (Vencimentos Antecipados)**
+   * External reference code for the issuance.
+   * Type: `string`
 
----
+3. **numeroEmissao**:
 
-## 2. General Extraction Rules
+   * Sequential issuance number.
+   * Type: `integer`
 
-### **Monetary Formatting**
-- All monetary values must adhere to the **Brazilian currency format** (e.g., `R$ 1.234.567,89`).
-- If decimals are missing, append `,00`.
+4. **numeroSerie**:
 
-### **Missing Information**
-- If a specific field is not found in the document, assign **"N/A"** as its value.
+   * Series identifier.
+   * Type: `string`
 
-### **Completeness**
-- The final **JSON output must include all the fields listed above**.
-- No field should be omitted, even if the information is missing.
-- No additional text or explanation should be present outside of this JSON object.
+5. **tipoSerie**:
 
----
+   * Series type (e.g., “SENIOR”).
+   * Type: `string`
 
-## 3. Chain-of-Thought (CoT) Reasoning
+6. **regimeFiduciario**:
 
-1. **Analyze the Document**  
-   - Thoroughly read and analyze `main_document.md` to understand its content and locate relevant sections.
+   * Whether the issuance is under fiduciary regime.
+   * Type: `boolean`
 
-2. **Identify and Extract Information**  
-   - Extract the data for each of the fields listed in **Sections A, B, and C**.
+7. **distribuicaoPublica**:
 
-3. **Apply Formatting and Deduction Rules**  
-   - Ensure monetary formatting is correct.
-   - Replace missing values with `"N/A"`.
+   * Whether it is a public distribution.
+   * Type: `boolean`
 
-4. **Validate and Compile JSON**  
-   - Ensure every field is accounted for.
-   - Compile the extracted data into the final **JSON output**.
+8. **negociacaoSecundariaPor**:
 
----
+   * Secondary trading designation (e.g., “INVESTIDOR\_PROFISSIONAL”).
+   * Type: `string`
 
-## 4. Expected JSON Schema
+9. **cartulaEmissaoFormalizado**:
+
+   * Whether the issuance certificate is formalized.
+   * Type: `boolean`
+
+10. **depositariaEmissao**:
+
+    * Name of the depositary for the issuance.
+    * Type: `string`
+
+11. **utilizacaoAnuncioInicioDistribuicao**:
+
+    * Whether an announcement starts distribution.
+    * Type: `boolean`
+
+12. **ufLocalEmissao**:
+
+    * State code where issuance occurs.
+    * Type: `string`
+
+13. **localEmissao**:
+
+    * Textual location of issuance.
+    * Type: `string`
+
+14. **classificadoraRisco1 / rating1**:
+
+    * First risk classifier and its rating.
+    * Type: `string`
+
+15. **classificadoraRisco2 / rating2**:
+
+    * Second risk classifier and its rating.
+    * Type: `string`
+
+16. **ufLocalPagamento**:
+
+    * State code for payment location.
+    * Type: `string`
+
+17. **localPagamento**:
+
+    * Textual payment location.
+    * Type: `string`
+
+18. **custodiantes (array)**:
+
+* **cnpjInstituicaoCustodiante**: CNPJ of custodian institution.
+* **razaoSocialInstituicaoCustodiante**: Legal name.
+* **investidoresPrivados (array)**:
+
+  * **cpfCnpj**: `string`
+  * **razaoSocial**: `string`
+  * **investidorId**: `string`
+  * **quantidade**: `integer`
+  * **ispbBanco**: `string`
+  * **razaoSocialBanco**: `string`
+  * **agenciaBanco**: `string`
+  * **contaBanco**: `string`
+* **informacoesBancarias (array)**:
+
+  * **ispbBanco**: `string`
+  * **razaoSocialBanco**: `string`
+  * **agenciaBanco**: `string`
+  * **contaBanco**: `string`
+
+19. **utilizacaoFaculdadeParagrafo3Art7**:
+
+    * Whether paragraph 3 of Art. 7 is applied.
+    * Type: `boolean`
+
+20. **nomeResponsavelPelasInformacoesDRI / emailResponsavelPelasInformacoesDRI**:
+
+    * Contact person’s name and email for DRI information.
+    * Type: `string`
+
+21. **bancoLiquidanteEmissor / cnpjBancoLiquidanteEmissor**:
+
+    * Name and CNPJ of liquidating bank.
+    * Type: `string`
+
+22. **codigoBancoContaCorrenteVinculadaEmissao / numeroAgenciaContaCorrenteVinculadaEmissao / numeroContaCorrenteVinculadaEmissao**:
+
+    * Bank code, agency, and account for the linked current account.
+    * Type: `string`
+
+23. **tipoLiquidacao**:
+
+    * Settlement type (e.g., “DIRETA”).
+    * Type: `string`
+
+24. **descricaoAdicional**:
+
+    * Any additional description.
+    * Type: `string`
+
+25. **garantias (array)**:
+
+* **id**: `integer`
+* **subTipos (array)**:
+
+  * **id**: `integer`
+
+26. **descricaoAdicionalGarantias**:
+
+    * Additional description for guarantees.
+    * Type: `string`
+
+27. **chaveExterna / isin**:
+
+    * External key and ISIN code.
+    * Type: `string`
+
+28. **coobrigacao**:
+
+    * Whether there is co-obligation.
+    * Type: `boolean`
+
+29. **naturezaAgenteFiduciario / razaoSocialAgenteFiduciario / cpfCnpjAgenteFiduciario**:
+
+    * Nature, legal name, and CNPJ of the fiduciary agent.
+    * Type: `string`
+
+30. **tipoDistribuicaoPublica**:
+
+    * Public distribution type.
+    * Type: `string`
+
+31. **coordenadoresIds (array of string)**:
+
+    * IDs of coordinators.
+    * Type: `string[]`
+
+32. **coordenadorLiderId**:
+
+    * Leader coordinator ID.
+    * Type: `string`
+
+33. **razaoSocialEscriturador / cnpjEscriturador / cnpjEmissor**:
+
+    * Legal names and CNPJs of registrar and issuer.
+    * Type: `string`
+
+34. **criteriosRemuneracao (object)**:
+
+* **valorNominalUnitarioEmissao**: `number`
+* **quantidadeEmitida**: `number`
+* **volumeEmissao**: `number`
+* **moedaEmissao**: `string`
+* **dataEmissao**: `string` (datetime)
+* **dataVencimento**: `string` (datetime)
+* **dataInicioRentabilidade**: `string` (datetime)
+* **indexador**: `string`
+* **taxaJurosFixoSpread**: `number`
+* **convencaoJurosFixos**: `string`
+* **custoEmissao (object)**:
+
+  * **custoTotal**: `number`
+  * **feeLaqusBruto**: `number`
+
+35. **amortizacaoSobre**:
+
+    * “PRINCIPAL” or other.
+    * Type: `string`
+
+36. **amortizacaoPassivelAoTermoSecuritizacao**:
+
+    * Whether amortization applies at the securitization term.
+    * Type: `boolean`
+
+37. **amortizacoes (array)**:
+
+* **percentualAmortizacao**: `number`
+* **dataAmortizacao**: `string` (ISO datetime)
+* **isNew**: `boolean`
+* **id**: `string`
+
+38. **pagamentoJuros / incorporacaoJuros (objects)**:
+
+* **datas**: array of date strings (`"YYYY-MM-DD HH:MM:SS"`)
+
+39. **possuiResgateAntecipado**:
+
+    * Whether early redemption is available.
+    * Type: `boolean`
+
+40. **documents (array of objects)**:
+
+    * Embedded document references.
+    * Type: `object[]`
+
+
+
+### Specific Rules:
+
+1. **Monetary Formatting**:
+
+   - All monetary values must use the **Brazilian format**: `R$ 1.234.567,89`.
+   - Add `,00` if decimals are missing in the document.
+
+2. **Missing Information**:
+  - If a field is not found, return:
+      - `"N/A"` for each field that falls into this condition of not being found in the document, a value.
+
+3. **Output Completeness:**:
+
+   - You must return all requested fields and items as a complete JSON object.
+   - Under no circumstances should you omit any items or fields, even partially. If the total output exceeds the token limit, split the response into multiple JSON objects, each containing sequential parts of the data, clearly labeled.
+
+4. **Output Consistency**:
+
+   - Ensure the JSON output strictly matches the schema provided, with no missing fields or deviations.
+
+5. **Item limitation**:
+   - The number of items in the "Itens" array can vary, However, in some cases there will be several items contained in a single document, which can overload the response and return missing information, so it must be limited to just 30 items, if the document exceeds this limit, just ignore the rest, return only the first 30 items.
+
+
+### Schema of Expected Output:
+
 
 ```json
 {
-  "Partes": {
-    "Emissor": "string",
-    "CoordenadorLider": "string",
-    "AgenteFiduciario": "string",
-    "Intervenientes": "string",
-    "Escriturador": "string"
-  },
-  "Caracteristicas": {
-    "NumeroEmissao": "string",
-    "Series": "string",
-    "Forma": "string",
-    "Tipo": "string",
-    "Especie": "string",
-    "DataEmissao": "string",
-    "DataRentabilidade": "string",
-    "DataVencimento": "string",
-    "Prazo": "string",
-    "ValorDaEmissao": "string",
-    "ValorUnitario": "string",
-    "QuantidadeDaEmissao": "string",
-    "DestinacaoDosRecursos": "string",
-    "AtualizacaoValorEmissao": "string",
-    "DadosRentabilidadeRemuneracao": "string",
-    "PagamentoRemuneracao": "string",
-    "PagamentoAmortizacao": "string",
-    "AmortizacaoExtraordinaria": "string",
-    "AquisicaoFacultativa": "string",
-    "ResgateAntecipado": "string"
-  },
-  "GarantiasEVencimentosAntecipados": {
-    "ObrigaçõesDoEmissor": "string",
-    "VencimentosAntecipados": "string"
+  "type": "object",
+  "properties": {
+    "emissorId": { "type": "string" },
+    "codigoExterno": { "type": "string" },
+    "numeroEmissao": { "type": "integer" },
+    "numeroSerie": { "type": "string" },
+    "tipoSerie": { "type": "string" },
+    "regimeFiduciario": { "type": "boolean" },
+    "distribuicaoPublica": { "type": "boolean" },
+    "negociacaoSecundariaPor": { "type": "string" },
+    "cartulaEmissaoFormalizado": { "type": "boolean" },
+    "depositariaEmissao": { "type": "string" },
+    "utilizacaoAnuncioInicioDistribuicao": { "type": "boolean" },
+    "ufLocalEmissao": { "type": "string" },
+    "localEmissao": { "type": "string" },
+    "classificadoraRisco1": { "type": "string" },
+    "rating1": { "type": "string" },
+    "classificadoraRisco2": { "type": "string" },
+    "rating2": { "type": "string" },
+    "ufLocalPagamento": { "type": "string" },
+    "localPagamento": { "type": "string" },
+    "custodiantes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cnpjInstituicaoCustodiante": { "type": "string" },
+          "razaoSocialInstituicaoCustodiante": { "type": "string" },
+          "investidoresPrivados": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "cpfCnpj": { "type": "string" },
+                "razaoSocial": { "type": "string" },
+                "investidorId": { "type": "string" },
+                "quantidade": { "type": "integer" },
+                "ispbBanco": { "type": "string" },
+                "razaoSocialBanco": { "type": "string" },
+                "agenciaBanco": { "type": "string" },
+                "contaBanco": { "type": "string" }
+              }
+            }
+          },
+          "informacoesBancarias": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ispbBanco": { "type": "string" },
+                "razaoSocialBanco": { "type": "string" },
+                "agenciaBanco": { "type": "string" },
+                "contaBanco": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "utilizacaoFaculdadeParagrafo3Art7": { "type": "boolean" },
+    "nomeResponsavelPelasInformacoesDRI": { "type": "string" },
+    "emailResponsavelPelasInformacoesDRI": { "type": "string" },
+    "bancoLiquidanteEmissor": { "type": "string" },
+    "cnpjBancoLiquidanteEmissor": { "type": "string" },
+    "codigoBancoContaCorrenteVinculadaEmissao": { "type": "string" },
+    "numeroAgenciaContaCorrenteVinculadaEmissao": { "type": "string" },
+    "numeroContaCorrenteVinculadaEmissao": { "type": "string" },
+    "tipoLiquidacao": { "type": "string" },
+    "descricaoAdicional": { "type": "string" },
+    "garantias": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "subTipos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "integer" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "descricaoAdicionalGarantias": { "type": "string" },
+    "chaveExterna": { "type": "string" },
+    "isin": { "type": "string" },
+    "coobrigacao": { "type": "boolean" },
+    "naturezaAgenteFiduciario": { "type": "string" },
+    "razaoSocialAgenteFiduciario": { "type": "string" },
+    "cpfCnpjAgenteFiduciario": { "type": "string" },
+    "tipoDistribuicaoPublica": { "type": "string" },
+    "coordenadoresIds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "coordenadorLiderId": { "type": "string" },
+    "razaoSocialEscriturador": { "type": "string" },
+    "cnpjEscriturador": { "type": "string" },
+    "cnpjEmissor": { "type": "string" },
+    "criteriosRemuneracao": {
+      "type": "object",
+      "properties": {
+        "valorNominalUnitarioEmissao": { "type": "number" },
+        "quantidadeEmitida": { "type": "number" },
+        "volumeEmissao": { "type": "number" },
+        "moedaEmissao": { "type": "string" },
+        "dataEmissao": { "type": "string" },
+        "dataVencimento": { "type": "string" },
+        "dataInicioRentabilidade": { "type": "string" },
+        "indexador": { "type": "string" },
+        "taxaJurosFixoSpread": { "type": "number" },
+        "convencaoJurosFixos": { "type": "string" },
+        "custoEmissao": {
+          "type": "object",
+          "properties": {
+            "custoTotal": { "type": "number" },
+            "feeLaqusBruto": { "type": "number" }
+          }
+        }
+      }
+    },
+    "amortizacaoSobre": { "type": "string" },
+    "amortizacaoPassivelAoTermoSecuritizacao": { "type": "boolean" },
+    "amortizacoes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "percentualAmortizacao": { "type": "number" },
+          "dataAmortizacao": { "type": "string" },
+          "isNew": { "type": "boolean" },
+          "id": { "type": "string" }
+        }
+      }
+    },
+    "pagamentoJuros": {
+      "type": "object",
+      "properties": {
+        "datas": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "incorporacaoJuros": {
+      "type": "object",
+      "properties": {
+        "datas": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "possuiResgateAntecipado": { "type": "boolean" },
+    "documents": {
+      "type": "array",
+      "items": { "type": "object" }
+    }
   }
 }
 ```
-

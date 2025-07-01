@@ -1,0 +1,300 @@
+  # ─────────────────────────────── MarketingTasks ────────────────────────────────
+
+ContentStrategistAgentTask:
+  description: |
+    ‑ Begin with a hidden section THOUGHTS where you reason step‑by‑step (this
+    will not be shown to the end user).
+    ‑ Finish with OUTPUT containing only the final answer.
+
+    You are creating a 30‑day multi‑channel campaign strategy using:
+      • subject: "{subject}"
+      • objective: "{objective}"
+      • language: "{language}"  (write the OUTPUT in this language)
+      • allowed platforms: {platforms}
+      • brand guidelines (if any): {brand}
+
+    Deliver a concise **strategy brief** covering:
+      • Communication objective / key message.
+      • Primary & secondary channels from the allowed list.
+      • Tonality guidelines consistent with the language.
+      • 2‑3 creative angles or storytelling frameworks (AIDA, BAB, PAS, etc.).
+      • Brand‑alignment notes.
+
+    Return only the `OUTPUT` section.
+
+  expected_output: Strategy brief text in {language}
+
+PostPlannerAgentTask:
+  description: |
+    ‑ Think privately in THOUGHTS, then provide answer in OUTPUT.
+
+    Using the strategy brief (context) and the parameters:
+      • language: "{language}"  (write every field in this language)
+      • allowed platforms: {platforms}
+      • Today is {{current_date}}. Start scheduling **tomorrow** (current_date + 1)
+        and continue for 29 more days (total 30 posts).
+
+    Produce **exactly 30** post ideas. For each post include:
+      - "topic": compelling headline.
+      - "platform": one value from {platforms}.
+      - "description": 150‑200 words using a copywriting framework.
+      - "keywords": list with **exactly seven** high‑intent keywords.
+      - "audience": specific target audience segment.
+      - "date": ISO date (YYYY‑MM‑DD) starting tomorrow and sequentially filling
+        the 30‑day window.
+
+    Return a single JSON array of 30 objects inside `OUTPUT`, with no extra text.
+
+  expected_output: JSON array with 30 post objects
+  depends_on:
+  - ContentStrategistAgent
+
+ComplianceReviewerAgentTask:
+  description: |
+    ‑ First think in THOUGHTS, examining the planned_posts for compliance with
+    all Rules (language, date range, keyword count, platform list, brand‑safe &
+    copyright‑safe content).
+    ‑ If you detect any violation, revise only the problematic fields (topic,
+    description, keywords, audience, date, platform) to bring them into
+    compliance while preserving intent.
+    ‑ When everything is correct, output the final sanitized JSON array in
+    OUTPUT.
+
+    Rules Checklist:
+      1. Language matches "{language}".
+      2. Dates start at {{current_date + 1}} and cover 30 consecutive days.
+      3. Exactly seven keywords per post.
+      4. Platform is in {platforms}.
+      5. No hateful, discriminatory, NSFW, or pirated content.
+      6. No instructions for wrongdoing or malware.
+
+    Return only the `OUTPUT` section containing the final JSON.
+
+  expected_output: Sanitized JSON array with 30 compliant post objects
+  depends_on:
+  - PostPlannerAgent
+
+
+
+PostContentCreatorAgentTask:
+  description: |
+    1. In THOUGHTS, call search_web to find current best practices for high‑
+    engagement writing on "{platform}" (length, tone, structure, CTA styles,
+    hashtag usage, etc.) and record insights.
+    2. Outline the piece using at least one copywriting framework (AIDA, BAB,
+    PAS…). Blend any {custom_instructions} into the plan.
+    3. Draft the final copy in OUTPUT, maintaining the language detected from
+    the provided topic and description.
+
+    Briefing fields:
+      • topic: "{topic}"
+      • platform: "{platform}"
+      • audience: "{audience}"
+      • mandatory keywords: {keywords}
+      • extra guidance: "{custom_instructions}"
+
+    End with a clear, platform‑appropriate CTA.
+
+    Return only the `OUTPUT` section.
+
+  expected_output: "Finished post text (string)"
+
+PostContentComplianceAgentTask:
+  description: |
+    1. In THOUGHTS, inspect the text returned by the previous agent for:
+    • Language consistency with the brief.
+    • Offensive, hateful, defamatory or NSFW content.
+    • Copyright‑protected excerpts > 90 characters.
+    • Promotion of illegal or malicious activity.
+    • Presence and natural usage of all {keywords}.
+    2. If a violation exists, minimally edit the copy to conform while
+    preserving intent and style.
+    3. Provide the final compliant text inside OUTPUT.
+
+    Return only the `OUTPUT` section.
+
+  expected_output: "Compliant post text (string)"
+  depends_on:
+  - PostContentCreatorAgent
+
+DocumentHealthAnalyzerAgentTask:
+  description: |
+    1. Parse the incoming text ({content_to_analyze}).
+    2. Calculate:
+    • total_words
+    • total_sentences
+    • total_paragraphs
+    • total_headings (lines that start with # in Markdown or <h*> tags)
+    • estimated_reading_time_minutes  (words / 200, rounded up)
+    3. Derive qualitative 0‑100 scores:
+    • Correctness  – grammar/spelling accuracy (start at 100, subtract 5
+    points per significant error detected via reasoning).
+    • Vocabulary   – lexical richness (type‑token ratio mapped 0‑100).
+    • Readability  – invert Flesch‑Kincaid grade level into 0‑100 (higher =
+    easier to read).
+    • Accessibility – plain‑language & inclusive wording (subjective, justify).
+    • Styles       – adherence to consistent tone & formatting.
+    • Terms        – keyword consistency/repetition control.
+    • Sentence_Structure – variation in length & complexity.
+    4. Compute content_score = average of the seven rubric scores.
+    5. Output JSON with this exact schema:
+
+      ```json
+      {
+        "words": 2745,
+        "sentences": 119,
+        "paragraphs": 56,
+        "headings": 14,
+        "reading_time_minutes": 11,
+        "scores": {
+          "correctness": 90,
+          "vocabulary": 80,
+          "readability": 70,
+          "accessibility": 70,
+          "styles": 80,
+          "terms": 80,
+          "sentence_structure": 70
+        },
+        "content_score": 77
+      }
+      ```
+
+    Use integer scores only.  Return the JSON inside `OUTPUT` with no prose.
+
+
+  expected_output: "Document health JSON report"
+
+DocumentHealthComplianceAgentTask:
+  description: |
+    1. In THOUGHTS, validate that every rubric score is between 0‑100 and the
+    content_score equals the rounded arithmetic mean of rubric scores.
+    2. Ensure no personally‑identifiable information or copyrighted excerpts
+    longer than 90 characters are echoed in examples.
+    3. If discrepancies exist, fix the JSON (adjust scores, round properly, or
+    redact excerpts) then place the cleaned object in OUTPUT.
+
+    Return only the `OUTPUT` section.
+
+  expected_output: "Cleaned document health JSON report"
+  depends_on:
+  - DocumentHealthAnalyzerAgent
+
+WebsiteBrandBriefAgentTask:
+  description: |
+    1. Use search_site on "{website_url}" to gather:
+    • About‑us / mission / vision pages
+    • Product / service descriptions
+    • Press releases or blog posts that reveal tone & audience
+    2. Ao chamar `search_site`, use **um dicionário** assim:
+      Action: Search in a specific website
+      Action Input: {"search_query": "missão", "website": "{website_url}"}
+    3. Optionally call search_web for external coverage (news, LinkedIn page)
+    to confirm positioning or audience data.
+    4. In THOUGHTS, synthesise findings into the following JSON structure:
+
+      ```json
+      {
+        "brand_name": "...",
+        "brand_description": "...",
+        "core_messaging": "...",
+        "audience": ["...", "..."],
+        "value_proposition": "...",
+        "tone_of_voice": ["...", "..."],
+        "industry": ["...", "..."],
+        "keywords_and_themes": ["...", "..."],
+        "topics": ["...", "...", "..."]
+      }
+      ```
+
+      *Write every string in the dominant language detected on the site.*
+      Use concise phrases for list items.
+    5. Place the JSON in `OUTPUT` with no extra text.
+    
+
+  expected_output: "Brand brief JSON object"
+
+BrandBriefComplianceAgentTask:
+  description: |
+    1. Verify that the incoming JSON contains all required keys and that each
+    list field has at least one element.
+    2. Ensure language consistency and remove any large copyrighted excerpts.
+    3. If data is missing, attempt to infer minimal placeholders (e.g., "TBD")
+    and flag with a trailing asterisk (*) so that humans can revisit.
+    4. Output the final clean JSON in OUTPUT.
+  expected_output: "Clean brand brief JSON"
+  depends_on:
+  - WebsiteBrandBriefAgent
+
+
+  # ─────────────────────────────── ExtractionEvaluatorTasks ────────────────────────────────
+ExtractionEvaluatorAgentTask:
+  description: |
+    - Begin with a hidden section **THOUGHTS** where you reason step-by-step.
+      (Everything inside THOUGHTS is internal and must NOT appear in the final
+      answer.)
+
+    - End with **OUTPUT** containing only the final JSON described below.
+
+    ──────────────────────────────────────────────────────────────
+    **Inputs**
+
+      • Ground-truth answers (answer-key) .............. {template}
+      • Model outputs to evaluate ...................... {agents_response_to_analyze}
+      • Evaluation Rules / recommendations ............. {rules_to_follow}
+      • Name of the model under test ................... {llm}
+
+    ──────────────────────────────────────────────────────────────
+    **Evaluation procedure (internal chain of thought)**
+
+      1. Parse both JSON structures and pair each document by its identifier.
+      2. For every document:
+         • Compare every expected field against the model output.
+         • Count **correct**, **incorrect**, **missing**, and **extra** fields.
+         • Compute document-level accuracy = correct / total_expected.
+      3. After all documents:
+         • overall_accuracy        = total_correct / total_expected.
+         • total_documents, total_fields_evaluated, total_errors.
+         • field_error_summary     = { field_name: error_count }.
+         • field_error_rate        = error_count / total_documents.
+         • top_error_fields        = the three fields with highest error_rate.
+      4. Detect and list any **rule_violations** per {rules_to_follow}.
+      5. Summarise key insights and recommendations.
+
+    ──────────────────────────────────────────────────────────────
+    **Required OUTPUT format**
+
+    ```json
+    {
+      "{llm}": {
+        "document_metrics": [
+          {
+            "document": "<file_name_or_id>",
+            "correct": <int>,
+            "incorrect": <int>,
+            "missing": <int>,
+            "extra": <int>,
+            "accuracy": <float>
+          }
+          // …one object per document
+        ],
+        "overall_accuracy": <float>,
+        "total_documents": <int>,
+        "total_fields_evaluated": <int>,
+        "total_errors": <int>,
+        "field_error_summary": {
+          "<field_name>": {
+            "errors": <int>,
+            "error_rate": <float>
+          }
+          // …one entry per field
+        },
+        "top_error_fields": ["<field1>", "<field2>", "<field3>"],
+        "rule_violations": ["<violation 1>", "..."],
+        "insights": "<concise narrative of key findings>"
+      }
+    }
+    ```
+
+    Return **only** the `OUTPUT` section as valid JSON—no extra text.
+
+  expected_output: JSON accuracy report keyed by {llm}

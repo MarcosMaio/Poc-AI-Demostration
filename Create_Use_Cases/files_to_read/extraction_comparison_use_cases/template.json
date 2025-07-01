@@ -1,0 +1,1668 @@
+{
+  "5462e5bb-024a-49fb-b74d-3a8102acafa7-TC_1_CETENCO.pdf": {
+    "tipo": "NC",
+    "numeroDaEmissao": 1,
+    "serieUnica": true,
+    "nroDeSeries": 1,
+    "qtdeDaEmissao": 33300000,
+    "valorNominalUnitario": 1,
+    "volumeDaEmissao": 33300000,
+    "moedaDaEmissao": "BRL",
+    "dataDaEmissao": "2024-08-21",
+    "dataDeVencimento": "2027-08-26",
+    "temDeposito": true,
+    "CNPJEscriturador": "33268302000102",
+    "tipoDeOferta": "PRIVADA",
+    "emissorCnpj": "61550497000106",
+    "amortizacoes": [
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2025-01-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2025-02-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2025-03-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2025-04-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2025-05-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2025-06-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2025-07-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2025-08-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2025-09-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2025-10-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2025-11-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2025-12-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2026-01-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2026-02-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2026-03-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2026-04-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2026-05-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2026-06-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2026-07-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2026-08-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2026-09-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2026-10-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2026-11-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2026-12-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2027-01-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2027-02-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2027-03-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2027-04-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2027-05-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2027-06-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.12,
+        "dataAmortizacao": "2027-07-26T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.13,
+        "dataAmortizacao": "2027-08-26T00:00:00"
+      }
+    ],
+    "pagamentosDeJuros": [
+      "2024-09-26T00:00:00",
+      "2024-10-26T00:00:00",
+      "2024-11-26T00:00:00",
+      "2024-12-26T00:00:00",
+      "2025-01-26T00:00:00",
+      "2025-02-26T00:00:00",
+      "2025-03-26T00:00:00",
+      "2025-04-26T00:00:00",
+      "2025-05-26T00:00:00",
+      "2025-06-26T00:00:00",
+      "2025-07-26T00:00:00",
+      "2025-08-26T00:00:00",
+      "2025-09-26T00:00:00",
+      "2025-10-26T00:00:00",
+      "2025-11-26T00:00:00",
+      "2025-12-26T00:00:00",
+      "2026-01-26T00:00:00",
+      "2026-02-26T00:00:00",
+      "2026-03-26T00:00:00",
+      "2026-04-26T00:00:00",
+      "2026-05-26T00:00:00",
+      "2026-06-26T00:00:00",
+      "2026-07-26T00:00:00",
+      "2026-08-26T00:00:00",
+      "2026-09-26T00:00:00",
+      "2026-10-26T00:00:00",
+      "2026-11-26T00:00:00",
+      "2026-12-26T00:00:00",
+      "2027-01-26T00:00:00",
+      "2027-02-26T00:00:00",
+      "2027-03-26T00:00:00",
+      "2027-04-26T00:00:00",
+      "2027-05-26T00:00:00",
+      "2027-06-26T00:00:00",
+      "2027-07-26T00:00:00",
+      "2027-08-26T00:00:00"
+    ],
+    "depositariaDaEmissao": {
+      "type": "Laqus Depositária de Valores Mobiliários S.A."
+    },
+    "bancoLiquidanteEmissor": {
+      "razaoSocial": "Banco BS2 S.A.",
+      "codigo": "218",
+      "agencia": "0001",
+      "conta": "179299"
+    },
+    "localDeEmissao": {
+      "uf": "SP",
+      "local": "São Paulo",
+      "ufDoPagamento": "SP",
+      "localDoPagamento": "São Paulo"
+    },
+    "garantias": [
+      {
+        "tipo": "FIDEJUSSORIA",
+        "subtipo": "FIDEJUSSORIA_AVAL",
+        "descricaoAdicional": ""
+      },
+      {
+        "tipo": "REAL",
+        "subtipo": "REAL_DIREITOS_CREDITORIOS",
+        "descricaoAdicional": ""
+      }
+    ],
+    "criteriosDeRemuneracao": {
+      "taxaDeJuros": 8.73,
+      "dataPrimeiroPagtoDeJuros": "2024-09-26T00:00:00",
+      "dataPrimeiroPagtoDaAmortizacao": "2025-01-26T00:00:00",
+      "resgateAntecipado": true,
+      "indexador": "CDI",
+      "configuracaoIndexador": {
+        "percentualDoIndexador": 100,
+        "defasagem": 1,
+        "taxaDeJurosFixo": 8.73,
+        "convencao": "30/360_aa",
+        "periodicidadeCorrecao": null,
+        "proRata": null,
+        "diaAniversario": null,
+        "mesAniversario": null,
+        "corrigePeriodoFinal": null,
+        "tipoProjecao": null
+      }
+    },
+    "rentabilidade": {
+      "inicioDaRentabilidade": "DATA_DE_EMISSAO",
+      "incorporacaoDeJuros": []
+    }
+  },
+  "6014b394-4fff-4cb3-8ae1-a3079bb4b46d-TC-15-LimpaSP-docx-D4Sign.pdf": {
+    "tipo": "NC",
+    "numeroDaEmissao": 15,
+    "serieUnica": true,
+    "nroDeSeries": 1,
+    "qtdeDaEmissao": 3776250,
+    "valorNominalUnitario": 1,
+    "volumeDaEmissao": 3776250,
+    "moedaDaEmissao": "BRL",
+    "dataDaEmissao": "2025-03-05",
+    "dataDeVencimento": "2025-04-07",
+    "temDeposito": true,
+    "CNPJEscriturador": "33268302000102",
+    "tipoDeOferta": "PRIVADA",
+    "emissorCnpj": "33469789000183",
+    "amortizacoes": [
+      {
+        "percentualAmortizacao": 100.0,
+        "dataAmortizacao": "2025-04-07T00:00:00"
+      }
+    ],
+    "pagamentosDeJuros": ["2025-04-07T00:00:00"],
+    "distribuicao": [
+      {
+        "quantidade": 3776250,
+        "volumeTotal": 3776250,
+        "investidorCnpj": "40669872000161",
+        "investidor": {
+          "documento": "40669872000161",
+          "nome": "GUATAMBU FIDC NP",
+          "dadosBancarios": {
+            "razaoSocial": "WNT CAPITAL DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS S.A.",
+            "codigo": "524",
+            "agencia": "0001",
+            "conta": "34680012"
+          }
+        }
+      }
+    ],
+    "depositariaDaEmissao": {
+      "type": "Laqus Depositária de Valores Mobiliários S.A."
+    },
+    "bancoLiquidanteEmissor": {
+      "razaoSocial": "Banco do Brasil S.A.",
+      "codigo": "001",
+      "agencia": "1744-2",
+      "conta": "112098-0"
+    },
+    "localDeEmissao": {
+      "uf": "SP",
+      "local": "São Paulo",
+      "ufDoPagamento": "SP",
+      "localDoPagamento": "São Paulo"
+    },
+    "garantias": [
+      {
+        "tipo": "SEM_GARANTIA",
+        "subtipo": "SEM_GARANTIA_SEM_COOBRIGACAO",
+        "descricaoAdicional": ""
+      }
+    ],
+    "criteriosDeRemuneracao": {
+      "taxaDeJuros": 46.78,
+      "dataPrimeiroPagtoDeJuros": "2025-04-07T00:00:00",
+      "dataPrimeiroPagtoDaAmortizacao": "2025-04-07T00:00:00",
+      "resgateAntecipado": true,
+      "indexador": "PREFIXADO",
+      "configuracaoIndexador": {
+        "percentualDoIndexador": 0,
+        "defasagem": "",
+        "taxaDeJurosFixo": 46.78,
+        "convencao": "DU/252_aa",
+        "periodicidadeCorrecao": null,
+        "proRata": null,
+        "diaAniversario": null,
+        "mesAniversario": null,
+        "corrigePeriodoFinal": null,
+        "tipoProjecao": null
+      }
+    },
+    "rentabilidade": {
+      "inicioDaRentabilidade": "DATA_DE_EMISSAO",
+      "incorporacaoDeJuros": []
+    }
+  },
+  "b51ef087-1aa7-4df0-9131-98aaa7f6993a-NC - TERMO CONSTITUTIVO - C BLINDADOS LTDA - 12.3.2025_assinado.pdf": {
+    "tipo": "NC",
+    "numeroDaEmissao": 11,
+    "serieUnica": true,
+    "nroDeSeries": 1,
+    "qtdeDaEmissao": 23805500,
+    "valorNominalUnitario": 1,
+    "volumeDaEmissao": 23805500,
+    "moedaDaEmissao": "BRL",
+    "dataDaEmissao": "2025-03-17",
+    "dataDeVencimento": "2026-07-22",
+    "temDeposito": true,
+    "CNPJEscriturador": "33268302000102",
+    "tipoDeOferta": "PRIVADA",
+    "emissorCnpj": "22811775000180",
+    "amortizacoes": [
+      { "percentualAmortizacao": 25, "dataAmortizacao": "2026-04-22T00:00:00" },
+      { "percentualAmortizacao": 25, "dataAmortizacao": "2026-05-20T00:00:00" },
+      { "percentualAmortizacao": 25, "dataAmortizacao": "2026-06-17T00:00:00" },
+      { "percentualAmortizacao": 25, "dataAmortizacao": "2026-07-22T00:00:00" }
+    ],
+    "pagamentosDeJuros": [
+      "2025-04-17T00:00:00",
+      "2025-05-21T00:00:00",
+      "2025-06-18T00:00:00",
+      "2025-07-17T00:00:00",
+      "2025-08-20T00:00:00",
+      "2025-09-17T00:00:00",
+      "2025-10-22T00:00:00",
+      "2025-11-19T00:00:00",
+      "2025-12-17T00:00:00",
+      "2026-01-21T00:00:00",
+      "2026-02-18T00:00:00",
+      "2026-03-18T00:00:00",
+      "2026-04-22T00:00:00",
+      "2026-05-20T00:00:00",
+      "2026-06-17T00:00:00",
+      "2026-07-22T00:00:00"
+    ],
+    "depositariaDaEmissao": {
+      "type": "Laqus Depositária de Valores Mobiliários S.A."
+    },
+    "bancoLiquidanteEmissor": {
+      "razaoSocial": "ITAÚ UNIBANCO S.A.",
+      "codigo": "341",
+      "agencia": "2000",
+      "conta": "757274"
+    },
+    "localDeEmissao": {
+      "uf": "SP",
+      "local": "São Paulo",
+      "ufDoPagamento": "SP",
+      "localDoPagamento": "São Paulo"
+    },
+    "garantias": [
+      {
+        "tipo": "FIDEJUSSORIA",
+        "subtipo": "FIDEJUSSORIA_AVAL",
+        "descricaoAdicional": ""
+      }
+    ],
+    "criteriosDeRemuneracao": {
+      "taxaDeJuros": 8,
+      "dataPrimeiroPagtoDeJuros": "2025-04-17T00:00:00",
+      "dataPrimeiroPagtoDaAmortizacao": "2026-04-22T00:00:00",
+      "resgateAntecipado": true,
+      "indexador": "CDI",
+      "configuracaoIndexador": {
+        "percentualDoIndexador": 100,
+        "defasagem": 1,
+        "taxaDeJurosFixo": 8,
+        "convencao": "DC/360_aa",
+        "periodicidadeCorrecao": null,
+        "proRata": null,
+        "diaAniversario": null,
+        "mesAniversario": null,
+        "corrigePeriodoFinal": null,
+        "tipoProjecao": null
+      }
+    },
+    "rentabilidade": {
+      "inicioDaRentabilidade": "DATA_DE_EMISSAO",
+      "incorporacaoDeJuros": []
+    }
+  },
+  "2b93f1db-2ca5-422a-8822-873afa3dbbac-TC-1-SantaIzabel-v2-pdf-D4Sign.pdf": {
+    "tipo": "NC",
+    "numeroDaEmissao": 1,
+    "serieUnica": true,
+    "nroDeSeries": 1,
+    "qtdeDaEmissao": 15225000,
+    "valorNominalUnitario": 1,
+    "volumeDaEmissao": 15225000,
+    "moedaDaEmissao": "BRL",
+    "dataDaEmissao": "2025-03-31",
+    "dataDeVencimento": "2028-03-15",
+    "temDeposito": true,
+    "CNPJEscriturador": "33268302000102",
+    "tipoDeOferta": "PRIVADA",
+    "emissorCnpj": "03779994000184",
+    "amortizacoes": [
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2025-07-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2025-09-01T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2025-09-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2025-10-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2025-12-01T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2025-12-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2026-01-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2026-03-02T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2026-03-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2026-04-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2026-06-01T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2026-06-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2026-07-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2026-08-31T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2026-09-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2026-10-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2026-11-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2026-12-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2027-02-01T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2027-03-01T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2027-03-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2027-04-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2027-05-31T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2027-06-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2027-07-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2027-08-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2027-09-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2027-11-01T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2027-11-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2027-12-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2028-01-31T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030303054,
+        "dataAmortizacao": "2028-03-01T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.030302272,
+        "dataAmortizacao": "2028-03-15T00:00:00"
+      }
+    ],
+    "pagamentosDeJuros": [
+      "2025-04-30T00:00:00",
+      "2025-05-30T00:00:00",
+      "2025-06-30T00:00:00",
+      "2025-07-30T00:00:00",
+      "2025-09-01T00:00:00",
+      "2025-09-30T00:00:00",
+      "2025-10-30T00:00:00",
+      "2025-12-01T00:00:00",
+      "2025-12-30T00:00:00",
+      "2026-01-30T00:00:00",
+      "2026-03-02T00:00:00",
+      "2026-03-30T00:00:00",
+      "2026-04-30T00:00:00",
+      "2026-06-01T00:00:00",
+      "2026-06-30T00:00:00",
+      "2026-07-30T00:00:00",
+      "2026-08-31T00:00:00",
+      "2026-09-30T00:00:00",
+      "2026-10-30T00:00:00",
+      "2026-11-30T00:00:00",
+      "2026-12-30T00:00:00",
+      "2027-02-01T00:00:00",
+      "2027-03-01T00:00:00",
+      "2027-03-30T00:00:00",
+      "2027-04-30T00:00:00",
+      "2027-05-31T00:00:00",
+      "2027-06-30T00:00:00",
+      "2027-07-30T00:00:00",
+      "2027-08-30T00:00:00",
+      "2027-09-30T00:00:00",
+      "2027-11-01T00:00:00",
+      "2027-11-30T00:00:00",
+      "2027-12-30T00:00:00",
+      "2028-01-31T00:00:00",
+      "2028-03-01T00:00:00",
+      "2028-03-15T00:00:00"
+    ],
+    "distribuicao": [
+      {
+        "quantidade": 15225000,
+        "volumeTotal": 15225000,
+        "investidorCnpj": "60889128000180",
+        "custodianteCnpj": "60889128000180",
+        "investidor": {
+          "documento": "60889128000180",
+          "nome": "Banco Sofisa s/a",
+          "dadosBancarios": {
+            "razaoSocial": "BANCO SOFISA S.A.",
+            "codigo": "637",
+            "agencia": "0001-9",
+            "conta": "637-0"
+          }
+        }
+      }
+    ],
+    "depositariaDaEmissao": {
+      "type": "Laqus Depositária de Valores Mobiliários S.A."
+    },
+    "bancoLiquidanteEmissor": {
+      "razaoSocial": "BANCO SOFISA S.A.",
+      "codigo": "637",
+      "agencia": "0013",
+      "conta": "0000012261"
+    },
+    "localDeEmissao": {
+      "uf": "SP",
+      "local": "São Paulo",
+      "ufDoPagamento": "SP",
+      "localDoPagamento": "São Paulo"
+    },
+    "garantias": [
+      {
+        "tipo": "FIDEJUSSORIA",
+        "subtipo": "FIDEJUSSORIA_AVAL",
+        "descricaoAdicional": ""
+      },
+      {
+        "tipo": "REAL",
+        "subtipo": "REAL_DIREITOS_CREDITORIOS",
+        "descricaoAdicional": ""
+      }
+    ],
+    "criteriosDeRemuneracao": {
+      "taxaDeJuros": 21.69,
+      "dataPrimeiroPagtoDeJuros": "2025-04-30T00:00:00",
+      "dataPrimeiroPagtoDaAmortizacao": "2025-07-30T00:00:00",
+      "resgateAntecipado": true,
+      "indexador": "PREFIXADO",
+      "configuracaoIndexador": {
+        "percentualDoIndexador": 0,
+        "defasagem": "",
+        "taxaDeJurosFixo": 21.69,
+        "convencao": "DU/252_aa",
+        "periodicidadeCorrecao": null,
+        "proRata": null,
+        "diaAniversario": null,
+        "mesAniversario": null,
+        "corrigePeriodoFinal": null,
+        "tipoProjecao": null
+      }
+    },
+    "rentabilidade": {
+      "inicioDaRentabilidade": "DATA_DE_INTEGRALIZACAO",
+      "incorporacaoDeJuros": []
+    }
+  },
+  "a701582a-8145-49ea-b125-0425409b26be-TC-16-LimpaSP-docx-D4Sign.pdf": {
+    "tipo": "NC",
+    "numeroDaEmissao": 16,
+    "serieUnica": true,
+    "nroDeSeries": 1,
+    "qtdeDaEmissao": 5035000,
+    "valorNominalUnitario": 1,
+    "volumeDaEmissao": 5035000,
+    "moedaDaEmissao": "BRL",
+    "dataDaEmissao": "2025-04-01",
+    "dataDeVencimento": "2025-05-02",
+    "temDeposito": true,
+    "CNPJEscriturador": "33268302000102",
+    "tipoDeOferta": "PRIVADA",
+    "emissorCnpj": "33469789000183",
+    "amortizacoes": [
+      {
+        "percentualAmortizacao": 100.0,
+        "dataAmortizacao": "2025-05-02T00:00:00"
+      }
+    ],
+    "pagamentosDeJuros": ["2025-05-02T00:00:00"],
+    "distribuicao": [
+      {
+        "quantidade": 5035000,
+        "volumeTotal": 5035000,
+        "investidorCnpj": "40669872000161",
+        "investidor": {
+          "documento": "40669872000161",
+          "nome": "GUATAMBU FIDC NP",
+          "dadosBancarios": {
+            "razaoSocial": "WNT CAPITAL DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS S.A.",
+            "codigo": "524",
+            "agencia": "0001",
+            "conta": "34680012"
+          }
+        }
+      }
+    ],
+    "depositariaDaEmissao": {
+      "type": "Laqus Depositária de Valores Mobiliários S.A."
+    },
+    "bancoLiquidanteEmissor": {
+      "razaoSocial": "Banco do Brasil S.A.",
+      "codigo": "001",
+      "agencia": "1744-2",
+      "conta": "112098-0"
+    },
+    "localDeEmissao": {
+      "uf": "SP",
+      "local": "São Paulo",
+      "ufDoPagamento": "SP",
+      "localDoPagamento": "São Paulo"
+    },
+    "garantias": [
+      {
+        "tipo": "SEM_GARANTIA",
+        "subtipo": "SEM_GARANTIA_SEM_COOBRIGACAO",
+        "descricaoAdicional": ""
+      }
+    ],
+    "criteriosDeRemuneracao": {
+      "taxaDeJuros": 47.46,
+      "dataPrimeiroPagtoDeJuros": "2025-05-02T00:00:00",
+      "dataPrimeiroPagtoDaAmortizacao": "2025-05-02T00:00:00",
+      "resgateAntecipado": true,
+      "indexador": "PREFIXADO",
+      "configuracaoIndexador": {
+        "percentualDoIndexador": 0,
+        "defasagem": "",
+        "taxaDeJurosFixo": 47.46,
+        "convencao": "DU/252_aa",
+        "periodicidadeCorrecao": null,
+        "proRata": null,
+        "diaAniversario": null,
+        "mesAniversario": null,
+        "corrigePeriodoFinal": null,
+        "tipoProjecao": null
+      }
+    },
+    "rentabilidade": {
+      "inicioDaRentabilidade": "DATA_DE_INTEGRALIZACAO",
+      "incorporacaoDeJuros": []
+    }
+  },
+  "cebf7eaa-cdd4-4d6f-a1f6-c5eaa9e3ffba-NC - TERMO CONSTITUTIVO - ADA TECNOLOGIA E EDUCACAO S.A. - 26.3.2025_assin.pdf": {
+    "tipo": "NC",
+    "numeroDaEmissao": 7,
+    "serieUnica": true,
+    "nroDeSeries": 1,
+    "qtdeDaEmissao": 1013000,
+    "valorNominalUnitario": 1,
+    "volumeDaEmissao": 1013000,
+    "moedaDaEmissao": "BRL",
+    "dataDaEmissao": "2025-04-03",
+    "dataDeVencimento": "2026-04-02",
+    "temDeposito": true,
+    "CNPJEscriturador": "33268302000102",
+    "tipoDeOferta": "PRIVADA",
+    "emissorCnpj": "24861255000107",
+    "amortizacoes": [
+      {
+        "percentualAmortizacao": 16.667,
+        "dataAmortizacao": "2025-10-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 16.667,
+        "dataAmortizacao": "2025-12-04T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 16.667,
+        "dataAmortizacao": "2026-01-01T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 16.667,
+        "dataAmortizacao": "2026-02-04T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 16.667,
+        "dataAmortizacao": "2026-03-04T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 16.665,
+        "dataAmortizacao": "2026-04-02T00:00:00"
+      }
+    ],
+    "pagamentosDeJuros": [
+      "2025-05-01T00:00:00",
+      "2025-06-04T00:00:00",
+      "2025-07-03T00:00:00",
+      "2025-07-31T00:00:00",
+      "2025-09-04T00:00:00",
+      "2025-10-02T00:00:00",
+      "2025-10-30T00:00:00",
+      "2025-12-04T00:00:00",
+      "2026-01-01T00:00:00",
+      "2026-02-04T00:00:00",
+      "2026-03-04T00:00:00",
+      "2026-04-02T00:00:00"
+    ],
+    "depositariaDaEmissao": {
+      "type": "Laqus Depositária de Valores Mobiliários S.A."
+    },
+    "bancoLiquidanteEmissor": {
+      "razaoSocial": "MONEY PLUS SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E A EMPRESA DE PEQUENO PORT",
+      "codigo": "274",
+      "agencia": "0001",
+      "conta": "226791-2"
+    },
+    "localDeEmissao": {
+      "uf": "SP",
+      "local": "São Paulo",
+      "ufDoPagamento": "SP",
+      "localDoPagamento": "São Paulo"
+    },
+    "garantias": [
+      {
+        "tipo": "FIDEJUSSORIA",
+        "subtipo": "FIDEJUSSORIA_AVAL",
+        "descricaoAdicional": ""
+      }
+    ],
+    "criteriosDeRemuneracao": {
+      "taxaDeJuros": 10.03,
+      "dataPrimeiroPagtoDeJuros": "2025-05-01T00:00:00",
+      "dataPrimeiroPagtoDaAmortizacao": "2025-10-30T00:00:00",
+      "resgateAntecipado": true,
+      "indexador": "CDI",
+      "configuracaoIndexador": {
+        "percentualDoIndexador": 100,
+        "defasagem": 1,
+        "taxaDeJurosFixo": 10.03,
+        "convencao": "DC/360_aa",
+        "periodicidadeCorrecao": null,
+        "proRata": null,
+        "diaAniversario": null,
+        "mesAniversario": null,
+        "corrigePeriodoFinal": null,
+        "tipoProjecao": null
+      }
+    },
+    "rentabilidade": {
+      "inicioDaRentabilidade": "DATA_DE_EMISSAO",
+      "incorporacaoDeJuros": []
+    }
+  },
+  "0eaa2d99-c679-4929-b419-bb5585944cdd-TC-6-DELLA-VIA-pdf-D4Sign.pdf": {
+    "tipo": "NC",
+    "numeroDaEmissao": 6,
+    "serieUnica": true,
+    "nroDeSeries": 1,
+    "qtdeDaEmissao": 1000000,
+    "valorNominalUnitario": 1,
+    "volumeDaEmissao": 1000000,
+    "moedaDaEmissao": "BRL",
+    "dataDaEmissao": "2025-04-15",
+    "dataDeVencimento": "2028-04-17",
+    "temDeposito": true,
+    "CNPJEscriturador": "33268302000102",
+    "tipoDeOferta": "PRIVADA",
+    "emissorCnpj": "60957784000172",
+    "amortizacoes": [
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2025-05-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2025-06-16T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2025-07-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2025-08-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2025-09-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2025-10-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2025-11-17T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2025-12-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2026-01-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2026-02-18T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2026-03-16T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2026-04-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2026-05-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2026-06-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2026-07-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2026-08-17T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2026-09-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2026-10-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2026-11-16T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2026-12-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2027-01-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2027-02-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2027-03-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2027-04-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2027-05-17T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2027-06-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2027-07-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2027-08-16T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2027-09-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2027-10-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2027-11-16T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2027-12-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2028-01-17T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2028-02-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.777778,
+        "dataAmortizacao": "2028-03-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.77777,
+        "dataAmortizacao": "2028-04-17T00:00:00"
+      }
+    ],
+    "pagamentosDeJuros": [
+      "2025-05-15T00:00:00",
+      "2025-06-16T00:00:00",
+      "2025-07-15T00:00:00",
+      "2025-08-15T00:00:00",
+      "2025-09-15T00:00:00",
+      "2025-10-15T00:00:00",
+      "2025-11-17T00:00:00",
+      "2025-12-15T00:00:00",
+      "2026-01-15T00:00:00",
+      "2026-02-18T00:00:00",
+      "2026-03-16T00:00:00",
+      "2026-04-15T00:00:00",
+      "2026-05-15T00:00:00",
+      "2026-06-15T00:00:00",
+      "2026-07-15T00:00:00",
+      "2026-08-17T00:00:00",
+      "2026-09-15T00:00:00",
+      "2026-10-15T00:00:00",
+      "2026-11-16T00:00:00",
+      "2026-12-15T00:00:00",
+      "2027-01-15T00:00:00",
+      "2027-02-15T00:00:00",
+      "2027-03-15T00:00:00",
+      "2027-04-15T00:00:00",
+      "2027-05-17T00:00:00",
+      "2027-06-15T00:00:00",
+      "2027-07-15T00:00:00",
+      "2027-08-16T00:00:00",
+      "2027-09-15T00:00:00",
+      "2027-10-15T00:00:00",
+      "2027-11-16T00:00:00",
+      "2027-12-15T00:00:00",
+      "2028-01-17T00:00:00",
+      "2028-02-15T00:00:00",
+      "2028-03-15T00:00:00",
+      "2028-04-17T00:00:00"
+    ],
+    "distribuicao": [
+      {
+        "quantidade": 1000000,
+        "volumeTotal": 1000000,
+        "investidorCnpj": "60889128000180",
+        "custodianteCnpj": "60889128000180",
+        "investidor": {
+          "documento": "60889128000180",
+          "nome": "Banco Sofisa s/a",
+          "dadosBancarios": {
+            "razaoSocial": "BANCO SOFISA S.A.",
+            "codigo": "637",
+            "agencia": "0001-9",
+            "conta": "637-0"
+          }
+        }
+      }
+    ],
+    "depositariaDaEmissao": {
+      "type": "Laqus Depositária de Valores Mobiliários S.A."
+    },
+    "bancoLiquidanteEmissor": {
+      "razaoSocial": "BANCO SOFISA S.A.",
+      "codigo": "637",
+      "agencia": "0001",
+      "conta": "0003592687"
+    },
+    "localDeEmissao": {
+      "uf": "SP",
+      "local": "São Paulo",
+      "ufDoPagamento": "SP",
+      "localDoPagamento": "São Paulo"
+    },
+    "garantias": [
+      {
+        "tipo": "FIDEJUSSORIA",
+        "subtipo": "FIDEJUSSORIA_AVAL",
+        "descricaoAdicional": ""
+      },
+      {
+        "tipo": "REAL",
+        "subtipo": "REAL_DIREITOS_CREDITORIOS",
+        "descricaoAdicional": ""
+      }
+    ],
+    "criteriosDeRemuneracao": {
+      "taxaDeJuros": 7.57,
+      "dataPrimeiroPagtoDeJuros": "2025-05-15T00:00:00",
+      "dataPrimeiroPagtoDaAmortizacao": "2025-05-15T00:00:00",
+      "resgateAntecipado": true,
+      "indexador": "CDI",
+      "configuracaoIndexador": {
+        "percentualDoIndexador": 100,
+        "defasagem": 1,
+        "taxaDeJurosFixo": 7.57,
+        "convencao": "DU/252_aa",
+        "periodicidadeCorrecao": null,
+        "proRata": null,
+        "diaAniversario": null,
+        "mesAniversario": null,
+        "corrigePeriodoFinal": null,
+        "tipoProjecao": null
+      }
+    },
+    "rentabilidade": {
+      "inicioDaRentabilidade": "DATA_DE_INTEGRALIZACAO",
+      "incorporacaoDeJuros": []
+    }
+  },
+  "a9f10a1a-ab26-4104-bca0-c76f436c85c4-TC_1_LOCA_PESADOS.pdf": {
+    "tipo": "NC",
+    "numeroDaEmissao": 1,
+    "serieUnica": true,
+    "nroDeSeries": 1,
+    "qtdeDaEmissao": 2086698,
+    "valorNominalUnitario": 1,
+    "volumeDaEmissao": 2086698,
+    "moedaDaEmissao": "BRL",
+    "dataDaEmissao": "2025-04-22",
+    "dataDeVencimento": "2028-04-22",
+    "temDeposito": true,
+    "CNPJEscriturador": "33268302000102",
+    "tipoDeOferta": "PRIVADA",
+    "emissorCnpj": "59862618000103",
+    "amortizacoes": [
+      {
+        "percentualAmortizacao": 2.612175312,
+        "dataAmortizacao": "2025-11-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.653964781,
+        "dataAmortizacao": "2025-12-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.69642229,
+        "dataAmortizacao": "2026-01-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.880797317,
+        "dataAmortizacao": "2026-02-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.854080466,
+        "dataAmortizacao": "2026-03-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.831305249,
+        "dataAmortizacao": "2026-04-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.876600256,
+        "dataAmortizacao": "2026-05-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.984482182,
+        "dataAmortizacao": "2026-06-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.910748465,
+        "dataAmortizacao": "2026-07-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 2.959549968,
+        "dataAmortizacao": "2026-08-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.06427715,
+        "dataAmortizacao": "2026-09-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.113299097,
+        "dataAmortizacao": "2026-10-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.263715209,
+        "dataAmortizacao": "2026-11-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.16746314,
+        "dataAmortizacao": "2026-12-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.265990575,
+        "dataAmortizacao": "2027-01-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.403968375,
+        "dataAmortizacao": "2027-02-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.412963448,
+        "dataAmortizacao": "2027-03-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.42729566,
+        "dataAmortizacao": "2027-04-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.482125348,
+        "dataAmortizacao": "2027-05-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.53783202,
+        "dataAmortizacao": "2027-06-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.564777941,
+        "dataAmortizacao": "2027-07-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.651458429,
+        "dataAmortizacao": "2027-08-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.685765741,
+        "dataAmortizacao": "2027-09-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.768838615,
+        "dataAmortizacao": "2027-10-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.865854091,
+        "dataAmortizacao": "2027-11-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.875565127,
+        "dataAmortizacao": "2027-12-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 3.940542906,
+        "dataAmortizacao": "2028-01-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 4.006609965,
+        "dataAmortizacao": "2028-02-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 4.092762824,
+        "dataAmortizacao": "2028-03-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 4.148768053,
+        "dataAmortizacao": "2028-04-22T00:00:00"
+      }
+    ],
+    "pagamentosDeJuros": [
+      "2025-05-22T00:00:00",
+      "2025-06-22T00:00:00",
+      "2025-07-22T00:00:00",
+      "2025-08-22T00:00:00",
+      "2025-09-22T00:00:00",
+      "2025-10-22T00:00:00",
+      "2025-11-22T00:00:00",
+      "2025-12-22T00:00:00",
+      "2026-01-22T00:00:00",
+      "2026-02-22T00:00:00",
+      "2026-03-22T00:00:00",
+      "2026-04-22T00:00:00",
+      "2026-05-22T00:00:00",
+      "2026-06-22T00:00:00",
+      "2026-07-22T00:00:00",
+      "2026-08-22T00:00:00",
+      "2026-09-22T00:00:00",
+      "2026-10-22T00:00:00",
+      "2026-11-22T00:00:00",
+      "2026-12-22T00:00:00",
+      "2027-01-22T00:00:00",
+      "2027-02-22T00:00:00",
+      "2027-03-22T00:00:00",
+      "2027-04-22T00:00:00",
+      "2027-05-22T00:00:00",
+      "2027-06-22T00:00:00",
+      "2027-07-22T00:00:00",
+      "2027-08-22T00:00:00",
+      "2027-09-22T00:00:00",
+      "2027-10-22T00:00:00",
+      "2027-11-22T00:00:00",
+      "2027-12-22T00:00:00",
+      "2028-01-22T00:00:00",
+      "2028-02-22T00:00:00",
+      "2028-03-22T00:00:00",
+      "2028-04-22T00:00:00"
+    ],
+    "depositariaDaEmissao": {
+      "type": "Laqus Depositária de Valores Mobiliários S.A."
+    },
+    "bancoLiquidanteEmissor": {
+      "razaoSocial": "Banco BS2 S.A.",
+      "codigo": "218",
+      "agencia": "0001",
+      "conta": "11740302"
+    },
+    "localDeEmissao": {
+      "uf": "SP",
+      "local": "São Paulo",
+      "ufDoPagamento": "SP",
+      "localDoPagamento": "São Paulo"
+    },
+    "garantias": [
+      {
+        "tipo": "FIDEJUSSORIA",
+        "subtipo": "FIDEJUSSORIA_AVAL",
+        "descricaoAdicional": ""
+      },
+      {
+        "tipo": "REAL",
+        "subtipo": "REAL_DIREITOS_CREDITORIOS",
+        "descricaoAdicional": ""
+      }
+    ],
+    "criteriosDeRemuneracao": {
+      "taxaDeJuros": 20.98,
+      "dataPrimeiroPagtoDeJuros": "2025-05-22T00:00:00",
+      "dataPrimeiroPagtoDaAmortizacao": "2025-11-22T00:00:00",
+      "resgateAntecipado": true,
+      "indexador": "PREFIXADO",
+      "configuracaoIndexador": {
+        "percentualDoIndexador": 0,
+        "defasagem": "",
+        "taxaDeJurosFixo": 20.98,
+        "convencao": "30/360_aa",
+        "periodicidadeCorrecao": null,
+        "proRata": null,
+        "diaAniversario": null,
+        "mesAniversario": null,
+        "corrigePeriodoFinal": null,
+        "tipoProjecao": null
+      }
+    },
+    "rentabilidade": {
+      "inicioDaRentabilidade": "DATA_DE_EMISSAO",
+      "incorporacaoDeJuros": []
+    }
+  },
+  "81cadf2a-95e7-48fa-ad6f-4fcf6e14c118-TC-320-BMC-pdf-D4Sign.pdf": {
+    "tipo": "NC",
+    "numeroDaEmissao": 320,
+    "serieUnica": true,
+    "nroDeSeries": 1,
+    "qtdeDaEmissao": 926330,
+    "valorNominalUnitario": 1,
+    "volumeDaEmissao": 926330,
+    "moedaDaEmissao": "BRL",
+    "dataDaEmissao": "2025-04-23",
+    "dataDeVencimento": "2025-10-20",
+    "temDeposito": true,
+    "CNPJEscriturador": "33268302000102",
+    "tipoDeOferta": "PRIVADA",
+    "emissorCnpj": "14168536000125",
+    "amortizacoes": [
+      { "percentualAmortizacao": 100, "dataAmortizacao": "2025-10-20T00:00:00" }
+    ],
+    "pagamentosDeJuros": ["2025-10-20T00:00:00"],
+    "distribuicao": [
+      {
+        "quantidade": 926330,
+        "volumeTotal": 926330,
+        "investidorCnpj": "45778027000148",
+        "investidor": {
+          "documento": "45778027000148",
+          "nome": "INFRA FIDC NAO PADRONIZADO",
+          "dadosBancarios": {
+            "razaoSocial": "SINGULARE CORRETORA DE TÍTULOS E VALORES MOBILIÁRIOS S.A.",
+            "codigo": "363",
+            "agencia": "0001",
+            "conta": "453655-2"
+          }
+        }
+      }
+    ],
+    "depositariaDaEmissao": {
+      "type": "Laqus Depositária de Valores Mobiliários S.A."
+    },
+    "bancoLiquidanteEmissor": {
+      "razaoSocial": "MONEY PLUS SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E A EMPRESA DE PEQUENO PORT",
+      "codigo": "274",
+      "agencia": "0001",
+      "conta": "14168-9"
+    },
+    "localDeEmissao": {
+      "uf": "SP",
+      "local": "São Paulo",
+      "ufDoPagamento": "SP",
+      "localDoPagamento": "São Paulo"
+    },
+    "garantias": [
+      {
+        "tipo": "FIDEJUSSORIA",
+        "subtipo": "FIDEJUSSORIA_AVAL",
+        "descricaoAdicional": ""
+      },
+      {
+        "tipo": "REAL",
+        "subtipo": "REAL_DIREITOS_CREDITORIOS",
+        "descricaoAdicional": ""
+      }
+    ],
+    "criteriosDeRemuneracao": {
+      "taxaDeJuros": 1.5,
+      "dataPrimeiroPagtoDeJuros": "2025-10-20T00:00:00",
+      "dataPrimeiroPagtoDaAmortizacao": "2025-10-20T00:00:00",
+      "resgateAntecipado": true,
+      "indexador": "PREFIXADO",
+      "configuracaoIndexador": {
+        "percentualDoIndexador": 0,
+        "defasagem": "",
+        "taxaDeJurosFixo": 1.5,
+        "convencao": "DC/30_am",
+        "periodicidadeCorrecao": null,
+        "proRata": null,
+        "diaAniversario": null,
+        "mesAniversario": null,
+        "corrigePeriodoFinal": null,
+        "tipoProjecao": null
+      }
+    },
+    "rentabilidade": {
+      "inicioDaRentabilidade": "DATA_DE_INTEGRALIZACAO",
+      "incorporacaoDeJuros": []
+    }
+  },
+  "274a6eae-56ae-42eb-93ef-a552c1b42d46-MINUTA-13-REDE-FURNAS-pdf-D4Sign.pdf": {
+    "tipo": "NC",
+    "numeroDaEmissao": 13,
+    "serieUnica": true,
+    "nroDeSeries": 1,
+    "qtdeDaEmissao": 1,
+    "valorNominalUnitario": 39056.32,
+    "volumeDaEmissao": 39056.32,
+    "moedaDaEmissao": "BRL",
+    "dataDaEmissao": "2025-04-22",
+    "dataDeVencimento": "2025-05-23",
+    "temDeposito": true,
+    "CNPJEscriturador": "33268302000102",
+    "tipoDeOferta": "PRIVADA",
+    "emissorCnpj": "01387686000188",
+    "amortizacoes": [
+      {
+        "percentualAmortizacao": 6.28,
+        "dataAmortizacao": "2025-04-29T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 6.4,
+        "dataAmortizacao": "2025-04-30T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 6.53,
+        "dataAmortizacao": "2025-05-02T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 6.66,
+        "dataAmortizacao": "2025-05-06T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 6.79,
+        "dataAmortizacao": "2025-05-08T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 6.92,
+        "dataAmortizacao": "2025-05-09T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 7.05,
+        "dataAmortizacao": "2025-05-13T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 7.19,
+        "dataAmortizacao": "2025-05-14T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 7.33,
+        "dataAmortizacao": "2025-05-15T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 7.47,
+        "dataAmortizacao": "2025-05-16T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 7.62,
+        "dataAmortizacao": "2025-05-19T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 7.77,
+        "dataAmortizacao": "2025-05-21T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 7.92,
+        "dataAmortizacao": "2025-05-22T00:00:00"
+      },
+      {
+        "percentualAmortizacao": 8.07,
+        "dataAmortizacao": "2025-05-23T00:00:00"
+      }
+    ],
+    "pagamentosDeJuros": [
+      "2025-04-29T00:00:00",
+      "2025-04-30T00:00:00",
+      "2025-05-02T00:00:00",
+      "2025-05-06T00:00:00",
+      "2025-05-08T00:00:00",
+      "2025-05-09T00:00:00",
+      "2025-05-13T00:00:00",
+      "2025-05-14T00:00:00",
+      "2025-05-15T00:00:00",
+      "2025-05-16T00:00:00",
+      "2025-05-19T00:00:00",
+      "2025-05-21T00:00:00",
+      "2025-05-22T00:00:00",
+      "2025-05-23T00:00:00"
+    ],
+    "distribuicao": [
+      {
+        "quantidade": 1,
+        "volumeTotal": 39056.32,
+        "investidorCnpj": "14955141000172",
+        "investidor": {
+          "documento": "14955141000172",
+          "nome": "MULTIPLIKE SECURITIZADORA S/A.",
+          "dadosBancarios": {
+            "razaoSocial": "ITAÚ UNIBANCO S.A.",
+            "codigo": "341",
+            "agencia": "2941",
+            "conta": "16862-3"
+          }
+        }
+      }
+    ],
+    "depositariaDaEmissao": {
+      "type": "Laqus Depositária de Valores Mobiliários S.A."
+    },
+    "bancoLiquidanteEmissor": {
+      "razaoSocial": "MONEY PLUS SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E A EMPRESA DE PEQUENO PORT",
+      "codigo": "274",
+      "agencia": "0001",
+      "conta": "0895574-2"
+    },
+    "localDeEmissao": {
+      "uf": "SP",
+      "local": "São Paulo",
+      "ufDoPagamento": "SP",
+      "localDoPagamento": "São Paulo"
+    },
+    "garantias": [
+      {
+        "tipo": "FIDEJUSSORIA",
+        "subtipo": "FIDEJUSSORIA_AVAL",
+        "descricaoAdicional": ""
+      }
+    ],
+    "criteriosDeRemuneracao": {
+      "taxaDeJuros": 1.72,
+      "dataPrimeiroPagtoDeJuros": "2025-04-29T00:00:00",
+      "dataPrimeiroPagtoDaAmortizacao": "2025-04-29T00:00:00",
+      "resgateAntecipado": true,
+      "indexador": "PREFIXADO",
+      "configuracaoIndexador": {
+        "percentualDoIndexador": 0,
+        "defasagem": "",
+        "taxaDeJurosFixo": 1.72,
+        "convencao": "DC/30_am",
+        "periodicidadeCorrecao": null,
+        "proRata": null,
+        "diaAniversario": null,
+        "mesAniversario": null,
+        "corrigePeriodoFinal": null,
+        "tipoProjecao": null
+      }
+    },
+    "rentabilidade": {
+      "inicioDaRentabilidade": "DATA_DE_EMISSAO",
+      "incorporacaoDeJuros": []
+    }
+  },
+  "931d624b-556a-44d4-8278-d72fbcd630b2-TC-321-BMC-pdf-D4Sign.pdf": {
+    "tipo": "NC",
+    "numeroDaEmissao": 321,
+    "serieUnica": true,
+    "nroDeSeries": 1,
+    "qtdeDaEmissao": 3692549,
+    "valorNominalUnitario": 1,
+    "volumeDaEmissao": 3692549,
+    "moedaDaEmissao": "BRL",
+    "dataDaEmissao": "2025-04-25",
+    "dataDeVencimento": "2025-10-22",
+    "temDeposito": true,
+    "CNPJEscriturador": "33268302000102",
+    "tipoDeOferta": "PRIVADA",
+    "emissorCnpj": "14168536000125",
+    "amortizacoes": [
+      { "percentualAmortizacao": 100, "dataAmortizacao": "2025-10-22T00:00:00" }
+    ],
+    "pagamentosDeJuros": ["2025-10-22T00:00:00"],
+    "distribuicao": [
+      {
+        "quantidade": 3692549,
+        "volumeTotal": 3692549,
+        "investidorCnpj": "45778027000148",
+        "investidor": {
+          "documento": "45778027000148",
+          "nome": "INFRA FIDC NAO PADRONIZADO",
+          "dadosBancarios": {
+            "razaoSocial": "SINGULARE CORRETORA DE TÍTULOS E VALORES MOBILIÁRIOS S.A.",
+            "codigo": "363",
+            "agencia": "0001",
+            "conta": "453655-2"
+          }
+        }
+      }
+    ],
+    "depositariaDaEmissao": {
+      "type": "Laqus Depositária de Valores Mobiliários S.A."
+    },
+    "bancoLiquidanteEmissor": {
+      "razaoSocial": "MONEY PLUS SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E A EMPRESA DE PEQUENO PORT",
+      "codigo": "274",
+      "agencia": "0001",
+      "conta": "14168-9"
+    },
+    "localDeEmissao": {
+      "uf": "SP",
+      "local": "São Paulo",
+      "ufDoPagamento": "SP",
+      "localDoPagamento": "São Paulo"
+    },
+    "garantias": [
+      {
+        "tipo": "FIDEJUSSORIA",
+        "subtipo": "FIDEJUSSORIA_AVAL",
+        "descricaoAdicional": ""
+      },
+      {
+        "tipo": "REAL",
+        "subtipo": "REAL_DIREITOS_CREDITORIOS",
+        "descricaoAdicional": ""
+      }
+    ],
+    "criteriosDeRemuneracao": {
+      "taxaDeJuros": 1.5,
+      "dataPrimeiroPagtoDeJuros": "2025-10-22T00:00:00",
+      "dataPrimeiroPagtoDaAmortizacao": "2025-10-22T00:00:00",
+      "resgateAntecipado": true,
+      "indexador": "PREFIXADO",
+      "configuracaoIndexador": {
+        "percentualDoIndexador": 0,
+        "defasagem": "",
+        "taxaDeJurosFixo": 1.5,
+        "convencao": "DC/30_am",
+        "periodicidadeCorrecao": null,
+        "proRata": null,
+        "diaAniversario": null,
+        "mesAniversario": null,
+        "corrigePeriodoFinal": null,
+        "tipoProjecao": null
+      }
+    },
+    "rentabilidade": {
+      "inicioDaRentabilidade": "DATA_DE_INTEGRALIZACAO",
+      "incorporacaoDeJuros": []
+    }
+  }
+}

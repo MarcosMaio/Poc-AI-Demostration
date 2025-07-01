@@ -1,0 +1,15 @@
+@startuml
+title Sequence – Brand Brief from Website
+
+participant "WebsiteBrandBriefAgent" as WBBA
+participant "WebsiteSearchTool" as WST
+participant "ScrapeWebsiteTool" as SWT
+participant "BrandBriefCompliance" as BBC
+
+client -> WBBA : website_url
+WBBA -> WST : Search 'missão', 'sobre'
+WBBA -> SWT : scrape detailed pages
+WBBA --> BBC : draft JSON
+BBC -> BBC : QA / sanitise
+BBC --> client : clean brief
+@enduml

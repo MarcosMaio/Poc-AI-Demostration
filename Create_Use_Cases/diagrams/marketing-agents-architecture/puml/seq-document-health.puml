@@ -1,0 +1,12 @@
+@startuml
+title Sequence – Document Health Report
+
+participant "DocumentHealthAnalyzer" as DHA
+participant "DocumentHealthCompliance" as DHC
+
+user -> DHA : content_to_analyze
+DHA -> DHA : compute metrics & scores
+DHA --> DHC : raw_report
+DHC -> DHC : verify ranges, mean
+DHC --> user : final_report
+@enduml

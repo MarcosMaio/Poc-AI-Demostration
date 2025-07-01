@@ -1,0 +1,37 @@
+@startuml
+title System overview – Marketing Agents
+
+skinparam componentStyle rectangle
+skinparam monochrome true
+skinparam shadowing false
+
+package "Config & Orquestração" {
+  [agents.yaml] as AY
+  [tasks.yaml]  as TY
+  component "Agents class\n(agents.py)" as AG
+}
+
+package "LLM Runtime" {
+  interface "LLM (Gemini / GPT-4o)" as LLM
+  database "ChromaDB\n(vector store)" as DB
+}
+
+package "External Tools" {
+  [SerperDevTool] as Serper
+  [WebsiteSearchTool] as WST
+  [ScrapeWebsiteTool] as SWT
+}
+
+AY --> AG : defines roles\n& parameters
+TY --> AG : defines tasks
+LLM --> AG : generate() / chat()
+AG --> Serper
+AG --> WST
+AG --> SWT
+AG --> DB : store+query\nembeddings
+
+note right of LLM
+Supports multiple providers
+(Gemini-2.5-pro, GPT-4o)
+end note
+@enduml
