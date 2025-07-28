@@ -13,14 +13,14 @@ from langchain_openai import OpenAIEmbeddings
 logger = logging.getLogger("jedai")
 
 TOOL_REGISTRY: dict[str, BaseTool] = {
-    "search_web":  SerperDevTool(), # This tool is used to search the web for information. getting the links
-    "search_site": WebsiteSearchTool( # This tool is used to search a specific website for information.
+    "search_web":  SerperDevTool(),
+    "search_site": WebsiteSearchTool( 
         embeddings=OpenAIEmbeddings(
             model="text-embedding-3-small",
             openai_api_key=os.getenv("OPENAI_API_KEY")
         )
     ),
-    "scrape_website": ScrapeWebsiteTool(), # This tool is used to scrape a website for information.
+    "scrape_website": ScrapeWebsiteTool(), 
 }
 class Agents:
     def __init__(self, llm):

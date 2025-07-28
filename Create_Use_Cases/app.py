@@ -5,7 +5,7 @@ import shutil
 import logging
 from dotenv import load_dotenv
 
-from agents import Agents
+from Create_Use_Cases.agents import Agents
 from helpers import (
     process_file,
     clean_agent_output,

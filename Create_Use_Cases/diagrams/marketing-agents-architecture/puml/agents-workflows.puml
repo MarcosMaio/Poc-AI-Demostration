@@ -1,0 +1,58 @@
+@startuml Agents & Workflows
+'-------------------------------------------------
+'  VISUAL
+'-------------------------------------------------
+skinparam componentStyle rectangle
+skinparam package {
+    BackgroundColor #F8F8F8
+    BorderColor     black
+}
+
+'-------------------------------------------------
+'  WORKFLOW 1  –  Campaign Planning
+'-------------------------------------------------
+package "Campaign Planning Workflow" {
+  [ContentStrategistAgent] --> [PostPlannerAgent]
+  [PostPlannerAgent]       --> [ComplianceReviewerAgent]
+}
+
+'-------------------------------------------------
+'  WORKFLOW 2  –  Post Content Creation
+'-------------------------------------------------
+package "Post Content Creation Workflow" {
+  [PostContentCreatorAgent] --> [PostContentComplianceAgent]
+}
+
+'-------------------------------------------------
+'  WORKFLOW 3  –  Document Health
+'-------------------------------------------------
+package "Document Health Workflow" {
+  [DocumentHealthAnalyzerAgent] --> [DocumentHealthComplianceAgent]
+}
+
+'-------------------------------------------------
+'  WORKFLOW 4  –  Website Brand Brief
+'-------------------------------------------------
+package "Website Brand Brief Workflow" {
+  [WebsiteBrandBriefAgent] --> [BrandBriefComplianceAgent]
+}
+
+'-------------------------------------------------
+'  SHARED TOOLS (opcional – ilustra dependências)
+'-------------------------------------------------
+note top of [ContentStrategistAgent]
+  Usa: search_web
+end note
+
+note top of [PostContentCreatorAgent]
+  Usa: search_web / search_site / scrape_website
+end note
+
+note top of [DocumentHealthAnalyzerAgent]
+  Usa: search_web / search_site / scrape_website
+end note
+
+note top of [WebsiteBrandBriefAgent]
+  Usa: search_site / scrape_website
+end note
+@enduml

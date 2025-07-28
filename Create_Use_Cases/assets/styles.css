@@ -1,0 +1,13 @@
+/* título na sidebar */
+[data-testid="stSidebar"] h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.2rem;
+}
+/* botões chamativos */
+button[kind="primary"] {
+  background: linear-gradient(90deg,#3b82f6,#9333ea);
+  border: none;
+}
+button[kind="primary"]:hover {
+  filter: brightness(1.05);
+}

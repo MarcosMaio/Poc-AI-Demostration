@@ -229,40 +229,41 @@ BrandBriefComplianceAgentTask:
   # ─────────────────────────────── ExtractionEvaluatorTasks ────────────────────────────────
 ExtractionEvaluatorAgentTask:
   description: |
-    - Begin with a hidden section **THOUGHTS** where you reason step-by-step.
-      (Everything inside THOUGHTS is internal and must NOT appear in the final
-      answer.)
+    ╭───────────────── INTERNAL ─────────────────╮
+    | Begin with a **THOUGHTS** section (hidden) |
+    | Implement the exact algorithm below:       |
+    |                                            |
+    | 1. Pre-processing helpers                  |
+    |    • normalise_cnpj(str) → digits-only     |
+    |    • normalise_date(str) → ISO-date (YYYY-MM-DD) |
+    |    • null_or_empty(x, y)  → true if Rule 2 |
+    | 2. Rule engine (use {rules_to_follow}):    |
+    |    • Build two lists: always_ignore_keys,  |
+    |      conditional_ignore_rules (e.g. Rule 4)|
+    |    • Functions: is_ignored(path, value)    |
+    | 3. Comparison loop                         |
+    |    FOR each document id in template:       |
+    |      - walk both JSONs depth-first          |
+    |      - skip keys if is_ignored()            |
+    |      - apply normalisations + Rule 6        |
+    |      - increment counters  {correct|incorrect|missing|extra} |
+    | 4. Metrics                                 |
+    |      doc_accuracy = round(correct / total_expected, 4) |
+    |      overall_accuracy = round(sum_correct / sum_expected, 4) |
+    | 5. Deterministic ordering                  |
+    |      sort(document_metrics, key=document)  |
+    |      sort(field_error_summary keys)        |
+    | 6. Build OUTPUT JSON exactly as spec.      |
+    ╰────────────────────────────────────────────╯
 
-    - End with **OUTPUT** containing only the final JSON described below.
+    ╭──────────────────── USER-VISIBLE SPEC ― copy verbatim below ―────────────────────╮
+    ── Inputs
+      • Ground-truth answers ................... {template}
+      • Model outputs ........................... {agents_response_to_analyze}
+      • Evaluation rules ........................ {rules_to_follow}
+      • Model name under test ................... {llm}
 
-    ──────────────────────────────────────────────────────────────
-    **Inputs**
-
-      • Ground-truth answers (answer-key) .............. {template}
-      • Model outputs to evaluate ...................... {agents_response_to_analyze}
-      • Evaluation Rules / recommendations ............. {rules_to_follow}
-      • Name of the model under test ................... {llm}
-
-    ──────────────────────────────────────────────────────────────
-    **Evaluation procedure (internal chain of thought)**
-
-      1. Parse both JSON structures and pair each document by its identifier.
-      2. For every document:
-         • Compare every expected field against the model output.
-         • Count **correct**, **incorrect**, **missing**, and **extra** fields.
-         • Compute document-level accuracy = correct / total_expected.
-      3. After all documents:
-         • overall_accuracy        = total_correct / total_expected.
-         • total_documents, total_fields_evaluated, total_errors.
-         • field_error_summary     = { field_name: error_count }.
-         • field_error_rate        = error_count / total_documents.
-         • top_error_fields        = the three fields with highest error_rate.
-      4. Detect and list any **rule_violations** per {rules_to_follow}.
-      5. Summarise key insights and recommendations.
-
-    ──────────────────────────────────────────────────────────────
-    **Required OUTPUT format**
-
+    ── OUTPUT format  (return **only** this JSON)
     ```json
     {
       "{llm}": {
@@ -273,20 +274,20 @@ ExtractionEvaluatorAgentTask:
             "incorrect": <int>,
             "missing": <int>,
             "extra": <int>,
-            "accuracy": <float>
+            "accuracy": <float>   // 0-1 rounded to 4 decimals
           }
-          // …one object per document
+          // ...sorted alphabetically by document
         ],
-        "overall_accuracy": <float>,
+        "overall_accuracy": <float>,              // 4-decimals
         "total_documents": <int>,
         "total_fields_evaluated": <int>,
         "total_errors": <int>,
         "field_error_summary": {
-          "<field_name>": {
+          "<field_path>": {
             "errors": <int>,
-            "error_rate": <float>
+            "error_rate": <float>                 // 4-decimals
           }
-          // …one entry per field
+          // ...sorted A-Z
         },
         "top_error_fields": ["<field1>", "<field2>", "<field3>"],
         "rule_violations": ["<violation 1>", "..."],
@@ -294,7 +295,6 @@ ExtractionEvaluatorAgentTask:
       }
     }
     ```
-
-    Return **only** the `OUTPUT` section as valid JSON—no extra text.
+    ╰──────────────────────────────────────────────────────────────────────────────────╯
 
   expected_output: JSON accuracy report keyed by {llm}
